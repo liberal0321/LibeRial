@@ -1,6 +1,5 @@
 ---
 layout: null
-footer_variant: simple
 copyright_years: "2025-2026"
 ---
 <!DOCTYPE html>
@@ -8,264 +7,214 @@ copyright_years: "2025-2026"
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="株式会社LibeRalは、自由で革新的な自動車の売買を掲げ、中古車の購入・売却・オークション代行をサポートします。">
-  <title>株式会社LibeRal | 自由で革新的な自動車の売買</title>
+  <meta name="description" content="LibeRial（リベリアル）は、Liberal（自由）の理念とMaterial（素材）へのこだわりから生まれたアパレルブランドです。飾らない。媚びない。素材で語る。">
+  <title>LibeRial | Liberal × Material</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  {% include header.html %}
 
-  <main>
-    <section class="hero" id="hero">
-      <div class="hero-slide" style="background-image:url('car1.jpg');"></div>
-      <div class="hero-slide" style="background-image:url('car2.jpg');"></div>
-      <div class="hero-slide" style="background-image:url('car3.jpg');"></div>
-      <div class="hero-slide" style="background-image:url('car4.jpg');"></div>
+{% include header.html %}
 
-      <div class="hero-text">
-        <span class="hero-kicker">Liberal and innovative car dealings</span>
-        <h1>株式会社LibeRal</h1>
-        <p>自由で革新的な自動車の売買を。</p>
-        <div class="hero-actions">
-          <a href="#service" class="btn btn-primary">LibeRalについて</a>
-          <a href="contact.html" class="btn btn-outline">お問い合わせ</a>
-          <a href="zaiko.html" class="btn btn-stock">在庫車両を見る <span>→</span></a>
-        </div>
+<main>
+  <section class="lr-hero" id="top">
+    <div class="lr-hero-bg"></div>
+    <div class="lr-hero-grid"></div>
+
+    <div class="lr-hero-inner">
+      <span class="lr-eyebrow">LIBERAL × MATERIAL</span>
+      <h1>LibeRial</h1>
+      <p class="lr-hero-copy">飾らない。媚びない。素材で語る。</p>
+
+      <div class="lr-hero-actions">
+        <a href="#collection" class="lr-btn lr-btn-light">VIEW COLLECTION <span>→</span></a>
+        <a href="#statement" class="lr-btn lr-btn-ghost">OUR STATEMENT</a>
+      </div>
+    </div>
+
+    <div class="lr-hero-word" aria-hidden="true">LIBERIAL</div>
+  </section>
+
+  <section class="lr-statement reveal" id="statement">
+    <div class="lr-container lr-statement-grid">
+      <div>
+        <span class="lr-section-no">01 / STATEMENT</span>
+        <h2>LibeRial —<br>Liberal × Material</h2>
       </div>
 
-      <button class="hero-arrow left" id="prev" aria-label="前の画像">&#10094;</button>
-      <button class="hero-arrow right" id="next" aria-label="次の画像">&#10095;</button>
-    </section>
-
-    <section class="home-news">
-      <div class="home-news-inner">
-
-        <div class="home-news-title">
-          <div>
-            <span class="home-news-kicker">NEWS &amp; TOPICS</span>
-            <h2>NEWS</h2>
-          </div>
-
-          <a href="news.html" class="home-news-all">
-            VIEW ALL <span>→</span>
-          </a>
-        </div>
-
-        <div class="home-news-list">
-          {% for post in site.posts limit:3 %}
-          <a href="{{ post.url | relative_url }}" class="home-news-item">
-
-            <div class="home-news-meta">
-              <time datetime="{{ post.date | date_to_xmlschema }}">
-                {{ post.date | date: "%Y.%m.%d" }}
-              </time>
-
-              <span>{{ post.category }}</span>
-            </div>
-
-            <h3>{{ post.title }}</h3>
-
-            <span class="home-news-arrow">→</span>
-          </a>
-          {% endfor %}
-        </div>
-
-        {% if site.posts.size == 0 %}
-        <p class="home-news-empty">現在、お知らせはありません。</p>
-        {% endif %}
-
+      <div class="lr-statement-copy">
+        <p class="lr-statement-lead">飾らない。媚びない。素材で語る。</p>
+        <p>
+          『LibeRial』は、Liberal（自由）の理念と、
+          Material（素材）への徹底的なこだわりから生まれました。
+        </p>
+        <p>
+          華美なデザインよりも、上質な生地の質感と美しいシルエットを。
+          着る人の日常に静かに寄り添う、真のクオリティをお届けします。
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="content-section intro" id="service">
-      <div class="intro-inner">
+  <section class="lr-collection reveal" id="collection">
+    <div class="lr-container">
+      <div class="lr-section-head">
         <div>
-          <span class="section-label">About LibeRal</span>
-          <h2>LibeRalとは</h2>
+          <span class="lr-section-no">02 / COLLECTION</span>
+          <h2>ESSENTIALS</h2>
         </div>
-        <div class="intro-copy">
-          <p><strong>『LibeRal』では、『LibeRal and innovative car dealings』</strong></p>
-          <p>日本語訳で『自由で革新的な自動車の売買』を企業理念に掲げ、今までの中古車の売買にはない体験を生み出します。</p>
-          <p>豊富な中古車売買の経験から、お客様の自動車の売買をサポートするため、あらゆるサービスを提供する会社です。</p>
-        </div>
+        <p>日常に残るものだけを。</p>
       </div>
-    </section>
 
-    <section class="content-section mission-section" id="mission">
-      <div class="mission-wrap">
-
-        <div class="mission-heading">
-          <span class="mission-eyebrow">OUR MISSION</span>
-          <h2>LibeRalの使命</h2>
-          <p>BRIDGE THE DRIVERS</p>
-        </div>
-
-        <div class="mission-main">
-          <div class="mission-copy">
-            <span class="mission-small">BRIDGE THE DRIVERS</span>
-            <h3 class="mission-title"><span>今のオーナーから、</span><span>次のオーナーへ。</span></h3>
-            <p class="mission-en">Connecting one owner to the next.</p>
-            <p class="mission-body">
-              クルマの価値と想いを次へつなぐ。<br>
-              LibeRalは、オーナーとオーナーをつなぐ架け橋になります。
-            </p>
+      <div class="lr-product-grid">
+        <article class="lr-product">
+          <div class="lr-product-visual">
+            <span>01</span>
+            <strong>T-SHIRT</strong>
+            <small>COMING SOON</small>
           </div>
-
-          <div class="bridge-visual" aria-hidden="true">
-            <div class="owner owner-current">
-              <span class="owner-label">CURRENT</span>
-              <strong>OWNER</strong>
-            </div>
-
-            <div class="bridge-line">
-              <span class="bridge-dot bridge-dot-left"></span>
-              <span class="bridge-logo">LibeRal</span>
-              <span class="bridge-dot bridge-dot-right"></span>
-            </div>
-
-            <div class="owner owner-next">
-              <span class="owner-label">NEXT</span>
-              <strong>OWNER</strong>
-            </div>
+          <div class="lr-product-meta">
+            <h3>Essential Tee</h3>
+            <span>COMING SOON</span>
           </div>
-        </div>
+        </article>
 
-        <div class="mission-statement">
-          <span>01</span>
-          <p>自由で革新的な自動車の売買を通じて、<strong>売る人と買う人の距離を近づける。</strong></p>
-        </div>
+        <article class="lr-product">
+          <div class="lr-product-visual">
+            <span>02</span>
+            <strong>HOODIE</strong>
+            <small>COMING SOON</small>
+          </div>
+          <div class="lr-product-meta">
+            <h3>Essential Hoodie</h3>
+            <span>COMING SOON</span>
+          </div>
+        </article>
 
+        <article class="lr-product">
+          <div class="lr-product-visual">
+            <span>03</span>
+            <strong>SWEAT</strong>
+            <small>COMING SOON</small>
+          </div>
+          <div class="lr-product-meta">
+            <h3>Essential Sweat</h3>
+            <span>COMING SOON</span>
+          </div>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="content-section service-grid-section">
-      <div class="service-grid-inner">
-        <div class="service-grid-header">
-          <span class="section-label">Our Services</span>
-          <h2>自動車の売買を、もっと自由に。</h2>
-        </div>
-
-        <div class="cards">
-          <a class="card" href="service.html">
-            <span class="card-number">01 / AUCTION</span>
-            <h3>オークション代行</h3>
-            <p>中古車オークションを活用し、購入・売却の選択肢を広げます。</p>
-            <span class="card-arrow">→</span>
-          </a>
-
-          <a class="card" href="zaiko.html">
-            <span class="card-number">02 / STOCK CAR</span>
-            <h3>車を探す</h3>
-            <p>掲載在庫から、あなたに合う一台を。<br>条件を絞ってお探しいただけます。</p>
-            <span class="card-arrow">→</span>
-          </a>
-
-          <a class="card" href="kaitori.html">
-            <span class="card-number">03 / PURCHASE</span>
-            <h3>車両買取</h3>
-            <p>豊富な売買経験を活かし、納得感のある買取を目指します。</p>
-            <span class="card-arrow">→</span>
-          </a>
-        </div>
+  <section class="lr-material reveal">
+    <div class="lr-container lr-material-grid">
+      <div class="lr-material-dark">
+        <span class="lr-section-no">03 / MATERIAL</span>
+        <h2>DESIGNED<br>FROM MATERIAL.</h2>
       </div>
-    </section>
-  </main>
 
-  {% include footer.html %}
+      <div class="lr-material-copy">
+        <span>MATERIAL FIRST</span>
+        <h3>デザインの前に、<br>素材から考える。</h3>
+        <p>
+          見た目だけではなく、触れた瞬間の質感、着たときの落ち感、
+          日常で繰り返し手に取りたくなる心地よさまで。
+          LibeRialは素材を起点にプロダクトを考えます。
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      const hamburger = document.getElementById("hamburger");
-      const nav = document.getElementById("nav");
-      const header = document.querySelector(".site-header");
+  <section class="home-news lr-news">
+    <div class="home-news-inner">
+      <div class="home-news-title">
+        <div>
+          <span class="home-news-kicker">NEWS &amp; JOURNAL</span>
+          <h2>NEWS</h2>
+        </div>
 
-      function updateHeader(){
-        header.classList.toggle("scrolled", window.scrollY > 40);
-      }
+        <a href="news.html" class="home-news-all">
+          VIEW ALL <span>→</span>
+        </a>
+      </div>
 
-      updateHeader();
-      window.addEventListener("scroll", updateHeader, { passive: true });
+      <div class="home-news-list">
+        {% for post in site.posts limit:3 %}
+        <a href="{{ post.url | relative_url }}" class="home-news-item">
+          <div class="home-news-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%Y.%m.%d" }}
+            </time>
+            <span>{{ post.category }}</span>
+          </div>
+          <h3>{{ post.title }}</h3>
+          <span class="home-news-arrow">→</span>
+        </a>
+        {% endfor %}
+      </div>
 
-      hamburger.addEventListener("click", function(){
-        const isOpen = nav.classList.toggle("active");
-        hamburger.setAttribute("aria-expanded", isOpen);
-        hamburger.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+      {% if site.posts.size == 0 %}
+      <p class="home-news-empty">現在、お知らせはありません。</p>
+      {% endif %}
+    </div>
+  </section>
 
-        document.querySelectorAll(".submenu").forEach(sub => {
-          if (window.innerWidth <= 980) sub.style.display = "none";
-        });
-      });
+  <section class="lr-coming reveal">
+    <div class="lr-coming-inner">
+      <span>ONLINE STORE</span>
+      <h2>THE FIRST COLLECTION<br>COMING SOON.</h2>
+      <p>商品ラインアップ・オンラインストアは順次公開予定です。</p>
+      <a href="#collection">COLLECTION <span>→</span></a>
+    </div>
+  </section>
+</main>
 
-      document.querySelectorAll(".toggle-submenu").forEach(el => {
-        const toggle = function(){
-          if(window.innerWidth <= 980){
-            const submenu = el.nextElementSibling;
-            const isOpen = submenu.style.display === "block";
-            submenu.style.display = isOpen ? "none" : "block";
-            el.setAttribute("aria-expanded", !isOpen);
-          }
-        };
+{% include footer.html %}
 
-        el.addEventListener("click", toggle);
-        el.addEventListener("keydown", function(e){
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            toggle();
-          }
-        });
-      });
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+  const header = document.querySelector(".site-header");
 
-      const slides = document.querySelectorAll(".hero-slide");
-      const heroText = document.querySelector(".hero-text");
-      let current = 0;
+  function updateHeader(){
+    if (header) header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
 
-      function showSlide(index){
-        slides.forEach(s => s.classList.remove("active"));
-        slides[index].classList.add("active");
-        heroText.classList.remove("show");
-        setTimeout(() => heroText.classList.add("show"), 160);
-      }
-
-      showSlide(current);
-
-      let slideInterval = setInterval(() => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
-      }, 5000);
-
-      function resetInterval(){
-        clearInterval(slideInterval);
-        slideInterval = setInterval(() => {
-          current = (current + 1) % slides.length;
-          showSlide(current);
-        }, 5000);
-      }
-
-      document.getElementById("prev").addEventListener("click", () => {
-        current = (current - 1 + slides.length) % slides.length;
-        showSlide(current);
-        resetInterval();
-      });
-
-      document.getElementById("next").addEventListener("click", () => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
-        resetInterval();
-      });
-
-      const sections = document.querySelectorAll(".content-section");
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.14 });
-
-      sections.forEach(sec => observer.observe(sec));
+  if (hamburger && nav) {
+    hamburger.addEventListener("click", function(){
+      const isOpen = nav.classList.toggle("active");
+      hamburger.setAttribute("aria-expanded", isOpen);
+      hamburger.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
     });
-  </script>
+  }
+
+  document.querySelectorAll(".toggle-submenu").forEach(el => {
+    el.addEventListener("click", function(){
+      if(window.innerWidth <= 980){
+        const submenu = el.nextElementSibling;
+        if (!submenu) return;
+        const isOpen = submenu.style.display === "block";
+        submenu.style.display = isOpen ? "none" : "block";
+        el.setAttribute("aria-expanded", !isOpen);
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+});
+</script>
+
 </body>
 </html>
