@@ -832,3 +832,96 @@ footer::before {
   margin-top:50px;
   font-size:14px;
 }
+/* ===== LibeRial Header Adjustment ===== */
+
+.site-header{
+  height:110px;
+  background:#050505;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.site-header .header-inner{
+  width:min(calc(100% - 100px),1600px);
+  height:100%;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* ロゴ */
+.site-header .logo-area{
+  display:flex;
+  align-items:center;
+}
+
+.site-header .logo{
+  width:230px;
+  height:auto;
+  display:block;
+}
+
+/* メニュー */
+.site-header .menu{
+  display:flex;
+  align-items:center;
+  gap:46px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.site-header .menu li{
+  margin:0;
+  padding:0;
+}
+
+.site-header .menu a{
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-decoration:none;
+  position:relative;
+  padding:12px 0;
+  transition:opacity .25s ease;
+}
+
+.site-header .menu a:hover{
+  opacity:.65;
+}
+
+/* 下線アニメーション */
+.site-header .menu a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:4px;
+  width:0;
+  height:1px;
+  background:#fff;
+  transition:width .25s ease;
+}
+
+.site-header .menu a:hover::after{
+  width:100%;
+}
+
+/* スマホ */
+@media(max-width:900px){
+  .site-header{
+    height:88px;
+  }
+
+  .site-header .header-inner{
+    width:calc(100% - 38px);
+  }
+
+  .site-header .logo{
+    width:180px;
+  }
+
+  .site-header .menu{
+    gap:20px;
+  }
+}
