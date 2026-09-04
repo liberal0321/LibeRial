@@ -8,7 +8,11 @@
 }
 
 html{scroll-behavior:smooth;}
-body{background:var(--lr-paper);color:var(--lr-ink);}
+body{
+  margin:0;
+  background:var(--lr-paper);
+  color:var(--lr-ink);
+}
 .lr-container{width:min(100% - 72px,1240px);margin:0 auto;}
 
 .lr-hero{
