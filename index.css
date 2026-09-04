@@ -185,3 +185,21 @@ body{background:var(--lr-paper);color:var(--lr-ink);}
   .lr-btn{width:100%;}
   .lr-statement h2,.lr-section-head h2,.lr-material-dark h2,.lr-coming h2{font-size:40px;}
 }
+.lr-items-showcase{
+  width:100%;
+  background:#050505;
+  padding:0;
+  margin:0;
+}
+
+.lr-items-showcase-inner{
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+.lr-items-showcase img{
+  display:block;
+  width:100%;
+  height:auto;
+}
