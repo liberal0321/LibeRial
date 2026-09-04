@@ -651,8 +651,15 @@ nav.active .menu {
     grid-template-columns: 1fr;
   }
   .lr-hero-bg{
-   background-size: auto 90%;
-  background-position: 25% center;
+   .lr-hero-bg{
+  background-image:
+    linear-gradient(rgba(0,0,0,.24),rgba(0,0,0,.24)),
+    url('liberial-main-sp.jpg');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 }
 }
 
