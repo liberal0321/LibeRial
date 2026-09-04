@@ -548,21 +548,34 @@ footer::before {
   }
 
   .menu {
-    display: none;
-    position: fixed;
-    top: 76px;
-    left: 0;
-    right: 0;
-    max-height: calc(100vh - 76px);
-    overflow-y: auto;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 10px 18px 24px;
-    background: rgba(15,18,22,.985);
-    box-shadow: 0 18px 40px rgba(0,0,0,.28);
-  }
+  display:none;
+  position:fixed;
 
+  /* 現在のスマホヘッダー88pxに合わせる */
+  top:88px;
+  left:0;
+  right:0;
+
+  /* ヘッダー下から画面下まで完全に覆う */
+  height:calc(100dvh - 88px);
+  max-height:none;
+
+  overflow-y:auto;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+
+  padding:18px 28px 40px;
+
+  /* 背景を完全な黒にしてヒーローを透かさない */
+  background:#0b0d10;
+
+  z-index:9998;
+  box-shadow:none;
+}
+.site-header{
+  z-index:9999;
+}
   nav.active .menu {
     display: flex;
   }
