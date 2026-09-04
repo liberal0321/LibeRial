@@ -1,0 +1,271 @@
+---
+layout: null
+footer_variant: simple
+copyright_years: "2025-2026"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社LibeRalは、自由で革新的な自動車の売買を掲げ、中古車の購入・売却・オークション代行をサポートします。">
+  <title>株式会社LibeRal | 自由で革新的な自動車の売買</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  {% include header.html %}
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-slide" style="background-image:url('car1.jpg');"></div>
+      <div class="hero-slide" style="background-image:url('car2.jpg');"></div>
+      <div class="hero-slide" style="background-image:url('car3.jpg');"></div>
+      <div class="hero-slide" style="background-image:url('car4.jpg');"></div>
+
+      <div class="hero-text">
+        <span class="hero-kicker">Liberal and innovative car dealings</span>
+        <h1>株式会社LibeRal</h1>
+        <p>自由で革新的な自動車の売買を。</p>
+        <div class="hero-actions">
+          <a href="#service" class="btn btn-primary">LibeRalについて</a>
+          <a href="contact.html" class="btn btn-outline">お問い合わせ</a>
+          <a href="zaiko.html" class="btn btn-stock">在庫車両を見る <span>→</span></a>
+        </div>
+      </div>
+
+      <button class="hero-arrow left" id="prev" aria-label="前の画像">&#10094;</button>
+      <button class="hero-arrow right" id="next" aria-label="次の画像">&#10095;</button>
+    </section>
+
+    <section class="home-news">
+      <div class="home-news-inner">
+
+        <div class="home-news-title">
+          <div>
+            <span class="home-news-kicker">NEWS &amp; TOPICS</span>
+            <h2>NEWS</h2>
+          </div>
+
+          <a href="news.html" class="home-news-all">
+            VIEW ALL <span>→</span>
+          </a>
+        </div>
+
+        <div class="home-news-list">
+          {% for post in site.posts limit:3 %}
+          <a href="{{ post.url | relative_url }}" class="home-news-item">
+
+            <div class="home-news-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%Y.%m.%d" }}
+              </time>
+
+              <span>{{ post.category }}</span>
+            </div>
+
+            <h3>{{ post.title }}</h3>
+
+            <span class="home-news-arrow">→</span>
+          </a>
+          {% endfor %}
+        </div>
+
+        {% if site.posts.size == 0 %}
+        <p class="home-news-empty">現在、お知らせはありません。</p>
+        {% endif %}
+
+      </div>
+    </section>
+
+    <section class="content-section intro" id="service">
+      <div class="intro-inner">
+        <div>
+          <span class="section-label">About LibeRal</span>
+          <h2>LibeRalとは</h2>
+        </div>
+        <div class="intro-copy">
+          <p><strong>『LibeRal』では、『LibeRal and innovative car dealings』</strong></p>
+          <p>日本語訳で『自由で革新的な自動車の売買』を企業理念に掲げ、今までの中古車の売買にはない体験を生み出します。</p>
+          <p>豊富な中古車売買の経験から、お客様の自動車の売買をサポートするため、あらゆるサービスを提供する会社です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section mission-section" id="mission">
+      <div class="mission-wrap">
+
+        <div class="mission-heading">
+          <span class="mission-eyebrow">OUR MISSION</span>
+          <h2>LibeRalの使命</h2>
+          <p>BRIDGE THE DRIVERS</p>
+        </div>
+
+        <div class="mission-main">
+          <div class="mission-copy">
+            <span class="mission-small">BRIDGE THE DRIVERS</span>
+            <h3 class="mission-title"><span>今のオーナーから、</span><span>次のオーナーへ。</span></h3>
+            <p class="mission-en">Connecting one owner to the next.</p>
+            <p class="mission-body">
+              クルマの価値と想いを次へつなぐ。<br>
+              LibeRalは、オーナーとオーナーをつなぐ架け橋になります。
+            </p>
+          </div>
+
+          <div class="bridge-visual" aria-hidden="true">
+            <div class="owner owner-current">
+              <span class="owner-label">CURRENT</span>
+              <strong>OWNER</strong>
+            </div>
+
+            <div class="bridge-line">
+              <span class="bridge-dot bridge-dot-left"></span>
+              <span class="bridge-logo">LibeRal</span>
+              <span class="bridge-dot bridge-dot-right"></span>
+            </div>
+
+            <div class="owner owner-next">
+              <span class="owner-label">NEXT</span>
+              <strong>OWNER</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="mission-statement">
+          <span>01</span>
+          <p>自由で革新的な自動車の売買を通じて、<strong>売る人と買う人の距離を近づける。</strong></p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="content-section service-grid-section">
+      <div class="service-grid-inner">
+        <div class="service-grid-header">
+          <span class="section-label">Our Services</span>
+          <h2>自動車の売買を、もっと自由に。</h2>
+        </div>
+
+        <div class="cards">
+          <a class="card" href="service.html">
+            <span class="card-number">01 / AUCTION</span>
+            <h3>オークション代行</h3>
+            <p>中古車オークションを活用し、購入・売却の選択肢を広げます。</p>
+            <span class="card-arrow">→</span>
+          </a>
+
+          <a class="card" href="zaiko.html">
+            <span class="card-number">02 / STOCK CAR</span>
+            <h3>車を探す</h3>
+            <p>掲載在庫から、あなたに合う一台を。<br>条件を絞ってお探しいただけます。</p>
+            <span class="card-arrow">→</span>
+          </a>
+
+          <a class="card" href="kaitori.html">
+            <span class="card-number">03 / PURCHASE</span>
+            <h3>車両買取</h3>
+            <p>豊富な売買経験を活かし、納得感のある買取を目指します。</p>
+            <span class="card-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% include footer.html %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("nav");
+      const header = document.querySelector(".site-header");
+
+      function updateHeader(){
+        header.classList.toggle("scrolled", window.scrollY > 40);
+      }
+
+      updateHeader();
+      window.addEventListener("scroll", updateHeader, { passive: true });
+
+      hamburger.addEventListener("click", function(){
+        const isOpen = nav.classList.toggle("active");
+        hamburger.setAttribute("aria-expanded", isOpen);
+        hamburger.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+
+        document.querySelectorAll(".submenu").forEach(sub => {
+          if (window.innerWidth <= 980) sub.style.display = "none";
+        });
+      });
+
+      document.querySelectorAll(".toggle-submenu").forEach(el => {
+        const toggle = function(){
+          if(window.innerWidth <= 980){
+            const submenu = el.nextElementSibling;
+            const isOpen = submenu.style.display === "block";
+            submenu.style.display = isOpen ? "none" : "block";
+            el.setAttribute("aria-expanded", !isOpen);
+          }
+        };
+
+        el.addEventListener("click", toggle);
+        el.addEventListener("keydown", function(e){
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggle();
+          }
+        });
+      });
+
+      const slides = document.querySelectorAll(".hero-slide");
+      const heroText = document.querySelector(".hero-text");
+      let current = 0;
+
+      function showSlide(index){
+        slides.forEach(s => s.classList.remove("active"));
+        slides[index].classList.add("active");
+        heroText.classList.remove("show");
+        setTimeout(() => heroText.classList.add("show"), 160);
+      }
+
+      showSlide(current);
+
+      let slideInterval = setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }, 5000);
+
+      function resetInterval(){
+        clearInterval(slideInterval);
+        slideInterval = setInterval(() => {
+          current = (current + 1) % slides.length;
+          showSlide(current);
+        }, 5000);
+      }
+
+      document.getElementById("prev").addEventListener("click", () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+        resetInterval();
+      });
+
+      document.getElementById("next").addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+        resetInterval();
+      });
+
+      const sections = document.querySelectorAll(".content-section");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+
+      sections.forEach(sec => observer.observe(sec));
+    });
+  </script>
+</body>
+</html>

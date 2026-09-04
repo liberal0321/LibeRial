@@ -1,0 +1,194 @@
+---
+nav_group: company
+copyright_years: "2025"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社概要 | 株式会社LibeRal</title>
+
+  <!-- トップページと共通のCSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 会社概要ページ専用CSS -->
+  <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  {% include header.html %}
+
+  <!-- ページヒーロー -->
+  <section class="about-hero">
+    <div class="about-hero-bg"></div>
+    <div class="about-hero-overlay"></div>
+
+    <div class="about-hero-content">
+      <span class="page-kicker">COMPANY</span>
+      <h1>会社概要</h1>
+      <p>自由で革新的な自動車の売買を。</p>
+    </div>
+
+    <a class="scroll-cue" href="#company">
+      <span>SCROLL</span>
+      <i></i>
+    </a>
+  </section>
+
+  <main>
+    <!-- 会社情報 -->
+    <section class="company-section reveal" id="company">
+      <div class="section-heading">
+        <span class="section-en">COMPANY PROFILE</span>
+        <h2>会社情報</h2>
+        <p>株式会社LibeRalの基本情報をご案内します。</p>
+      </div>
+
+      <div class="company-card">
+        <dl class="company-list">
+          <div class="company-row">
+            <dt>会社名</dt>
+            <dd>株式会社LibeRal（リベラル）</dd>
+          </div>
+
+          <div class="company-row">
+            <dt>所在地</dt>
+            <dd>〒273-0134 千葉県鎌ケ谷市西佐津間2-5-31</dd>
+          </div>
+
+          <div class="company-row">
+            <dt>設立</dt>
+            <dd>2025年3月</dd>
+          </div>
+
+          <div class="company-row">
+            <dt>資本金</dt>
+            <dd>100万円</dd>
+          </div>
+
+          <div class="company-row">
+            <dt>事業内容</dt>
+            <dd>中古車販売事業（買取販売・BtoB取引）</dd>
+          </div>
+
+          <div class="company-row">
+            <dt>主要取引先</dt>
+            <dd>
+              株式会社ジェイボーイ<br>
+              株式会社オートサーバー<br>
+              株式会社KATIX<br>
+              <small>（順不同）</small>
+            </dd>
+          </div>
+
+          <div class="company-row">
+            <dt>取引金融機関</dt>
+            <dd>
+              三井住友銀行<br>
+              日本政策金融公庫<br>
+              GMOあおぞらネット銀行
+            </dd>
+          </div>
+
+          <div class="company-row">
+            <dt>連絡先</dt>
+            <dd>
+              TEL：080-6729-3669<br>
+              E-mail：liberal.lr7@gmail.com
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- アクセス -->
+    <section class="access-section reveal" id="access">
+      <div class="section-heading">
+        <span class="section-en">ACCESS</span>
+        <h2>アクセス</h2>
+        <p>株式会社LibeRalへのアクセスはこちらです。</p>
+      </div>
+
+      <div class="access-grid">
+        <div class="access-info">
+          <span class="access-label">HEAD OFFICE</span>
+          <h3>株式会社LibeRal</h3>
+
+          <p>
+            〒273-0134<br>
+            千葉県鎌ケ谷市西佐津間2-5-31
+          </p>
+
+          <p class="access-tel">
+            TEL：080-6729-3669
+          </p>
+
+          <a href="contact.html" class="about-button">
+            お問い合わせ
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.093648277368!2d139.9962924745277!3d35.79763422357294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018826ab1fe4f7f%3A0xada8a4568d482493!2z44CSMjczLTAxMzQg5Y2D6JGJ55yM6Y6M44Kx6LC35biC6KW_5L2Q5rSl6ZaT77yS5LiB55uu77yV4oiS77yT77yR!5e0!3m2!1sja!2sjp!4v1760930105134!5m2!1sja!2sjp"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="株式会社LibeRal Google Map">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  {% include footer.html %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("nav");
+      const header = document.querySelector(".site-header");
+
+      hamburger.addEventListener("click", function () {
+        nav.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".toggle-submenu").forEach(function (el) {
+        el.addEventListener("click", function () {
+          if (window.innerWidth <= 980) {
+            const submenu = this.nextElementSibling;
+            submenu.style.display =
+              submenu.style.display === "block" ? "none" : "block";
+          }
+        });
+      });
+
+      function updateHeader() {
+        header.classList.toggle("scrolled", window.scrollY > 40);
+      }
+
+      updateHeader();
+      window.addEventListener("scroll", updateHeader, { passive: true });
+
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      }, { threshold: 0.12 });
+
+      reveals.forEach(function (el) {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>

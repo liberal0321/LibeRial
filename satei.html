@@ -1,0 +1,214 @@
+---
+nav_group: purchase
+copyright_years: "2025-2026"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>査定依頼 | 株式会社LibeRal</title>
+
+  <!-- 共通CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- お問い合わせページ専用CSS -->
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  {% include header.html %}
+
+  <!-- ヒーロー -->
+  <section class="contact-hero">
+    <div class="contact-hero-bg"></div>
+    <div class="contact-hero-overlay"></div>
+
+    <div class="contact-hero-content">
+      <span class="page-kicker">CONTACT</span>
+      <h1>査定依頼</h1>
+      <p>お車の売買に関するご相談を、いつでもお気軽に。</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="contact-section reveal" id="contact">
+      <div class="section-heading">
+        <span class="section-en">CONTACT FORM</span>
+        <h2>査定依頼</h2>
+        <p>
+          査定のご依頼、お車の購入、その他お車に関するご相談を承っております。<br>
+          必要事項をご入力のうえ、送信してください。
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <span class="contact-info-label">INFORMATION</span>
+          <h3>お気軽にご相談ください</h3>
+
+          <p>
+            お車の売却・購入・査定・オークション代行など、
+            中古車売買に関するご相談を承っております。
+          </p>
+
+          <div class="contact-info-block">
+            <span>PHONE</span>
+            <strong>080-6729-3669</strong>
+          </div>
+
+          <div class="contact-info-block">
+            <span>E-MAIL</span>
+            <strong>liberal.lr7@gmail.com</strong>
+          </div>
+
+          <div class="contact-note">
+            <p>内容を確認のうえ、担当者よりご連絡いたします。</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form id="contactForm" action="https://formspree.io/f/xgvlbqop" method="POST">
+
+            <div class="form-group">
+              <label for="name">お名前 <span class="required">必須</span></label>
+              <input type="text" id="name" name="name" required placeholder="例：山田 太郎">
+            </div>
+
+            <div class="form-group">
+              <label for="email">メールアドレス <span class="required">必須</span></label>
+              <input type="email" id="email" name="email" required placeholder="example@email.com">
+            </div>
+
+            <div class="form-group">
+              <label for="address">住所</label>
+              <input type="text" id="address" name="address" placeholder="例：千葉県鎌ケ谷市...">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">電話番号</label>
+              <input type="tel" id="phone" name="phone" placeholder="例：090-1234-5678">
+            </div>
+
+            <div class="form-group">
+              <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+              <textarea id="message" name="message" rows="7" required placeholder="ご相談内容をご入力ください"></textarea>
+            </div>
+
+            <div class="agreement-box">
+              <label class="agreement-label" for="agree">
+                <input type="checkbox" id="agree">
+                <span class="custom-checkbox"></span>
+                <span class="agreement-text">
+                  <a href="privacy.html" target="_blank">個人情報の取り扱いについて</a>
+                  に同意します。
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-button" disabled>
+              <span>送信する</span>
+              <span class="submit-arrow">→</span>
+            </button>
+
+            <div class="success-message" id="successMessage">
+              送信が完了しました。ありがとうございました！
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  {% include footer.html %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("nav");
+      const header = document.querySelector(".site-header");
+
+      hamburger.addEventListener("click", function () {
+        nav.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".toggle-submenu").forEach(function(el){
+        el.addEventListener("click", function(){
+          if(window.innerWidth <= 980){
+            const submenu = this.nextElementSibling;
+            submenu.style.display =
+              submenu.style.display === "block" ? "none" : "block";
+          }
+        });
+      });
+
+      function updateHeader(){
+        header.classList.toggle("scrolled", window.scrollY > 40);
+      }
+
+      updateHeader();
+      window.addEventListener("scroll", updateHeader, { passive: true });
+
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add("show");
+          }
+        });
+      }, { threshold: 0.12 });
+
+      reveals.forEach(function(el){
+        observer.observe(el);
+      });
+
+      const form = document.getElementById("contactForm");
+      const successMessage = document.getElementById("successMessage");
+      const agreeCheckbox = document.getElementById("agree");
+      const submitBtn = document.getElementById("submitBtn");
+
+      agreeCheckbox.addEventListener("change", function(){
+        submitBtn.disabled = !this.checked;
+      });
+
+      form.addEventListener("submit", function(event){
+        event.preventDefault();
+
+        if(!agreeCheckbox.checked){
+          alert("個人情報の取り扱いに同意してください。");
+          return;
+        }
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { "Accept": "application/json" }
+        }).then(function(response){
+          if(response.ok){
+            form.reset();
+            submitBtn.disabled = true;
+            successMessage.style.display = "block";
+
+            setTimeout(function(){
+              successMessage.style.display = "none";
+            }, 5000);
+          } else {
+            alert("送信に失敗しました。再度お試しください。");
+          }
+        }).catch(function(){
+          alert("送信中にエラーが発生しました。");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

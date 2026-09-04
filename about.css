@@ -1,0 +1,400 @@
+/* =========================================================
+   株式会社LibeRal / 会社概要ページ専用
+   style.css と一緒に読み込んで使用
+========================================================= */
+
+body {
+  background: #f5f6f8;
+}
+
+/* ---------- Page Hero ---------- */
+.about-hero {
+  position: relative;
+  height: min(72vh, 760px);
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  background: #07111f;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("about-bg.jpg");
+  background-size: cover;
+  background-position: center 52%;
+  transform: scale(1.035);
+  animation: heroZoom 12s ease-out forwards;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(4,9,16,.80) 0%, rgba(4,9,16,.45) 52%, rgba(4,9,16,.23) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.62) 100%);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  padding-bottom: 86px;
+}
+
+.page-kicker {
+  display: block;
+  margin-bottom: 16px;
+  color: #dfbc76;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .30em;
+}
+
+.about-hero h1 {
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 1;
+  letter-spacing: .04em;
+  font-weight: 800;
+  text-shadow: 0 8px 28px rgba(0,0,0,.30);
+}
+
+.about-hero p {
+  margin-top: 22px;
+  font-size: clamp(16px, 2vw, 22px);
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.88);
+}
+
+.scroll-cue {
+  position: absolute;
+  right: 50px;
+  bottom: 44px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,.85);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: .26em;
+  writing-mode: vertical-rl;
+}
+
+.scroll-cue i {
+  width: 1px;
+  height: 54px;
+  background: linear-gradient(#fff, transparent);
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.07); }
+  to   { transform: scale(1.015); }
+}
+
+/* ---------- Shared Sections ---------- */
+.company-section,
+.access-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 112px 32px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-heading {
+  margin-bottom: 46px;
+}
+
+.section-en {
+  display: block;
+  margin-bottom: 8px;
+  color: #a47b35;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .24em;
+}
+
+.section-heading h2 {
+  font-size: clamp(34px, 5vw, 54px);
+  line-height: 1.25;
+  letter-spacing: .03em;
+}
+
+.section-heading p {
+  margin-top: 12px;
+  color: #69717d;
+  font-size: 15px;
+}
+
+/* ---------- Company Card ---------- */
+.company-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(17,24,39,.08);
+  border-radius: 22px;
+  box-shadow: 0 26px 70px rgba(13,19,28,.08);
+}
+
+.company-list {
+  margin: 0;
+}
+
+.company-row {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  border-bottom: 1px solid rgba(17,24,39,.08);
+}
+
+.company-row:last-child {
+  border-bottom: 0;
+}
+
+.company-row dt,
+.company-row dd {
+  margin: 0;
+  padding: 25px 30px;
+}
+
+.company-row dt {
+  position: relative;
+  background: #111820;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .10em;
+}
+
+.company-row dt::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 3px;
+  height: 22px;
+  transform: translateY(-50%);
+  background: #c49a50;
+}
+
+.company-row dd {
+  display: flex;
+  align-items: center;
+  color: #343a43;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.company-row small {
+  color: #8a9098;
+}
+
+/* ---------- Access ---------- */
+.access-section {
+  padding-top: 30px;
+  padding-bottom: 130px;
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.6fr;
+  min-height: 490px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 26px 70px rgba(13,19,28,.10);
+}
+
+.access-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 54px;
+  background:
+    linear-gradient(145deg, rgba(10,15,22,.98), rgba(22,31,41,.96));
+  color: #fff;
+}
+
+.access-label {
+  color: #d9b56e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .25em;
+}
+
+.access-info h3 {
+  margin-top: 15px;
+  font-size: 30px;
+  line-height: 1.35;
+}
+
+.access-info p {
+  margin-top: 24px;
+  color: rgba(255,255,255,.76);
+  line-height: 2;
+}
+
+.access-info .access-tel {
+  margin-top: 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.about-button {
+  width: fit-content;
+  margin-top: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  padding: 14px 24px;
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.about-button:hover {
+  background: #c49a50;
+  border-color: #c49a50;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.map-container {
+  position: relative;
+  min-height: 490px;
+}
+
+.map-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- Footer ---------- */
+.about-footer {
+  background-image: url("about-bg.jpg");
+  background-position: center 64%;
+}
+
+/* ---------- Header active state ---------- */
+.active-menu {
+  color: #e0bf7c !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .about-hero {
+    height: 68vh;
+    min-height: 520px;
+  }
+
+  .about-hero-content {
+    width: min(100% - 40px, 1180px);
+    padding-bottom: 62px;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+
+  .company-section,
+  .access-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .company-row {
+    grid-template-columns: 170px 1fr;
+  }
+
+  .access-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    min-height: 500px;
+  }
+
+  .about-hero-bg {
+    background-position: 58% center;
+  }
+
+  .about-hero-content {
+    padding-bottom: 52px;
+  }
+
+  .company-section {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  .access-section {
+    padding-top: 0;
+    padding-bottom: 84px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .company-card {
+    border-radius: 16px;
+  }
+
+  .company-row {
+    display: block;
+  }
+
+  .company-row dt,
+  .company-row dd {
+    padding: 17px 20px;
+  }
+
+  .company-row dt {
+    padding-bottom: 12px;
+  }
+
+  .company-row dt::after {
+    display: none;
+  }
+
+  .company-row dd {
+    padding-top: 14px;
+  }
+
+  .access-grid {
+    border-radius: 18px;
+  }
+
+  .access-info {
+    padding: 38px 26px;
+  }
+
+  .map-container {
+    min-height: 340px;
+  }
+}

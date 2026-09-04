@@ -1,0 +1,184 @@
+---
+nav_group: auction
+footer_class: listing-footer
+footer_variant: rich
+copyright_years: "2025-2026"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>代行出品 | 株式会社LibeRal</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="daikoushuppin.css">
+</head>
+<body>
+
+{% include header.html %}
+
+<section class="listing-hero">
+  <div class="listing-hero-bg"></div>
+  <div class="listing-hero-overlay"></div>
+
+  <div class="listing-hero-content">
+    <span class="page-kicker">AUCTION CONSIGNMENT</span>
+    <h1>代行出品</h1>
+    <p>一般的な買取査定では評価しづらい車両に、オークションという選択肢を。</p>
+  </div>
+</section>
+
+<main>
+  <section class="listing-section reveal">
+
+    <div class="section-heading">
+      <span class="section-en">ABOUT</span>
+      <h2>代行出品について</h2>
+      <p>希少車・カスタムカーなど、通常の買取査定では値付けが難しい車両におすすめです。</p>
+    </div>
+
+    <div class="intro-card">
+      <p>
+        車両の価値はありますが、相場データが少なく買取金額の提示が難しいため、
+        一般的な買取査定では値付けが難しい車両などがオススメです。
+      </p>
+
+      <div class="vehicle-tags">
+        <span>希少車種</span>
+        <span>カスタムカー</span>
+        <span>ショップコンプリートカー</span>
+        <span>事故現状車</span>
+        <span>冠水車</span>
+      </div>
+    </div>
+
+    <div class="flow-heading">
+      <span class="section-en">FLOW</span>
+      <h2>オークション代行の流れ</h2>
+    </div>
+
+    <div class="flow-list">
+      <div class="flow-item">
+        <span class="flow-number">01</span>
+        <div>
+          <h3>車両情報の確認</h3>
+          <p>車両詳細をいただき、オークション落札想定金額とご希望金額のすり合わせ、残債金額の有無を確認します。</p>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <span class="flow-number">02</span>
+        <div>
+          <h3>引き取り・出品日程の調整</h3>
+          <p>車両引き取り日と出品日程を調整します。</p>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <span class="flow-number">03</span>
+        <div>
+          <h3>必要書類の準備</h3>
+          <p>名義変更書類の準備・正式残債金額の照会を行います。</p>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <span class="flow-number">04</span>
+        <div>
+          <h3>車両・書類のお預かり</h3>
+          <p>出品に必要な車両と書類をお預かりします。</p>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <span class="flow-number">05</span>
+        <div>
+          <h3>オークション搬入・出品</h3>
+          <p>オークション会場へ搬入し、出品手続きを行います。</p>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <span class="flow-number">06</span>
+        <div>
+          <h3>オークションにて落札</h3>
+          <p>オークションでの落札結果をご案内します。</p>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <span class="flow-number">07</span>
+        <div>
+          <h3>代金のお振込み</h3>
+          <p>落札後、所定の手続き完了後に代金をお振込みします。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice-card">
+      <h3>費用・残債について</h3>
+      <p>
+        代行費用等に関しましては、車両の条件や現状車等であればレッカー代などがございますので、
+        まずはお気軽にお問い合わせください。
+      </p>
+      <p>
+        残債が残っている車両でもオークション代行可能です（条件がございます）。
+      </p>
+    </div>
+
+    <div class="listing-cta">
+      <div>
+        <span class="cta-kicker">CONTACT</span>
+        <h3>まずは車両情報をお聞かせください。</h3>
+        <p>車種・年式・状態・残債の有無などを確認のうえご案内します。</p>
+      </div>
+
+      <a href="contact.html" class="listing-button">お問い合わせ <span>→</span></a>
+    </div>
+
+  </section>
+</main>
+
+{% include footer.html %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+  const header = document.querySelector(".site-header");
+
+  hamburger.addEventListener("click", function () {
+    nav.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".toggle-submenu").forEach(function (el) {
+    el.addEventListener("click", function () {
+      if (window.innerWidth <= 980) {
+        const submenu = this.nextElementSibling;
+        submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+      }
+    });
+  });
+
+  function updateHeader() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(".reveal").forEach(function(el) {
+    observer.observe(el);
+  });
+});
+</script>
+
+</body>
+</html>

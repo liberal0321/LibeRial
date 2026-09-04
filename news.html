@@ -1,0 +1,171 @@
+---
+layout: null
+title: NEWS
+footer_variant: rich
+copyright_years: "2025-2026"
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社LibeRalの最新情報・お知らせをご案内します。">
+
+  <title>NEWS | 株式会社LibeRal</title>
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/news.css">
+</head>
+
+<body>
+
+{% include header.html %}
+
+
+<section class="news-hero">
+
+  <div class="news-hero-inner">
+
+    <span class="news-kicker">
+      NEWS & TOPICS
+    </span>
+
+    <h1>NEWS</h1>
+
+    <p>
+      株式会社LibeRalからの<br>
+      最新情報をお届けします。
+    </p>
+
+  </div>
+
+</section>
+
+
+<main class="news-page">
+
+  <section class="news-container">
+
+    <div class="news-heading">
+
+      <div>
+        <span class="section-en">
+          LATEST INFORMATION
+        </span>
+
+        <h2>最新情報</h2>
+      </div>
+
+      <p>
+        お知らせ、買取実績、在庫情報などを<br>
+        随時更新しています。
+      </p>
+
+    </div>
+
+
+    <div class="news-list">
+
+      {% for post in site.posts %}
+
+      <a
+        href="{{ site.baseurl }}{{ post.url }}"
+        class="news-item">
+
+        <div class="news-meta">
+
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%Y.%m.%d" }}
+          </time>
+
+          <span class="news-category">
+            {{ post.category }}
+          </span>
+
+        </div>
+
+        <h3>
+          {{ post.title }}
+        </h3>
+
+        <span class="news-arrow">
+          →
+        </span>
+
+      </a>
+
+      {% endfor %}
+
+    </div>
+
+
+    {% if site.posts.size == 0 %}
+
+    <div class="news-empty">
+      現在、お知らせはありません。
+    </div>
+
+    {% endif %}
+
+  </section>
+
+</main>
+
+
+{% include footer.html %}
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const hamburger =
+    document.getElementById("hamburger");
+
+  const nav =
+    document.getElementById("nav");
+
+  if (hamburger && nav) {
+
+    hamburger.addEventListener(
+      "click",
+      function () {
+        nav.classList.toggle("active");
+      }
+    );
+
+  }
+
+
+  document
+    .querySelectorAll(".toggle-submenu")
+    .forEach(function (el) {
+
+      el.addEventListener(
+        "click",
+        function () {
+
+          if (window.innerWidth <= 980) {
+
+            const submenu =
+              this.nextElementSibling;
+
+            submenu.style.display =
+              submenu.style.display === "block"
+                ? "none"
+                : "block";
+
+          }
+
+        }
+      );
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

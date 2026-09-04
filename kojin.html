@@ -1,0 +1,184 @@
+---
+nav_group: purchase
+footer_class: kojin-footer
+footer_variant: rich
+copyright_years: "2025-2026"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社LibeRalの個人売買代行。名義変更、金銭取引、分割支払いなど個人売買の不安を幅広くサポートします。">
+  <title>個人売買代行 | 株式会社LibeRal</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="kojin.css">
+</head>
+<body>
+
+{% include header.html %}
+
+<section class="kojin-hero">
+  <div class="kojin-hero-bg"></div>
+  <div class="kojin-hero-overlay"></div>
+  <div class="kojin-hero-content">
+    <span class="page-kicker">OWNER TO OWNER</span>
+    <h1>個人売買代行</h1>
+    <p>個人売買を、もっと安心に。<br>売る人と買う人をLibeRalがつなぎます。</p>
+  </div>
+</section>
+
+<main>
+  <section class="kojin-section">
+
+    <div class="kojin-intro reveal">
+      <div class="section-heading">
+        <span class="section-en">PERSONAL TRANSACTION SUPPORT</span>
+        <h2><span>個人売買の不安を、</span><span>安心に変える。</span></h2>
+      </div>
+
+      <div class="intro-copy">
+        <p>個人売買での様々な問題やトラブルをサポートします。</p>
+        <p>「名義変更がきちんとされるか不安」「金銭のやり取りでトラブルになりたくない」そんな悩みはございませんか？</p>
+        <p>LibeRalでは、名義変更から金銭取引の仲介、さらには分割支払いのサポートまで、幅広く個人売買をサポートします。</p>
+      </div>
+    </div>
+
+    <section class="worry-section reveal">
+      <div class="section-heading compact">
+        <span class="section-en">COMMON CONCERNS</span>
+        <h2>こんな不安、ありませんか？</h2>
+      </div>
+
+      <div class="worry-grid">
+        <article class="worry-card">
+          <span class="worry-no">01</span>
+          <h3>名義変更</h3>
+          <p>車を渡したあと、本当に名義変更してもらえるのか不安。</p>
+        </article>
+
+        <article class="worry-card">
+          <span class="worry-no">02</span>
+          <h3>金銭のやり取り</h3>
+          <p>車両代金の受け渡しで、未払いやトラブルを避けたい。</p>
+        </article>
+
+        <article class="worry-card">
+          <span class="worry-no">03</span>
+          <h3>分割支払い</h3>
+          <p>一括だけでなく、購入者の支払い方法についても相談したい。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="support-section reveal">
+      <div class="support-copy">
+        <span class="section-en">LIBERAL SUPPORT</span>
+        <h2>売る人と買う人の間に、<br>LibeRalが入る。</h2>
+        <p>個人間だけでは不安になりやすい手続きや金銭取引をサポート。オーナーから次のオーナーへ、安心してクルマをつなげる環境をつくります。</p>
+      </div>
+
+      <div class="bridge-box">
+        <div class="bridge-owner">
+          <span>SELLER</span>
+          <strong>売主</strong>
+        </div>
+
+        <div class="bridge-line">
+          <i></i>
+          <b>LibeRal</b>
+          <i></i>
+        </div>
+
+        <div class="bridge-owner right">
+          <span>BUYER</span>
+          <strong>買主</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="support-list reveal">
+      <div class="support-item">
+        <span>01</span>
+        <div>
+          <h3>名義変更サポート</h3>
+          <p>車両の名義変更に関する手続きをサポートします。</p>
+        </div>
+      </div>
+
+      <div class="support-item">
+        <span>02</span>
+        <div>
+          <h3>金銭取引の仲介</h3>
+          <p>個人間で不安になりやすい車両代金のやり取りをサポートします。</p>
+        </div>
+      </div>
+
+      <div class="support-item">
+        <span>03</span>
+        <div>
+          <h3>分割支払いのサポート</h3>
+          <p>購入者の支払い方法についても幅広くご相談いただけます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="kojin-cta reveal">
+      <div>
+        <span class="cta-kicker">CONTACT</span>
+        <h3>個人売買でお悩みの際は、<br>お気軽にご相談ください。</h3>
+        <p>状況をお伺いし、必要なサポートをご案内します。</p>
+      </div>
+      <a href="contact.html" class="cta-button">お問い合わせ <span>→</span></a>
+    </section>
+
+  </section>
+</main>
+
+{% include footer.html %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+  const header = document.querySelector(".site-header");
+
+  hamburger.addEventListener("click", function () {
+    nav.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".toggle-submenu").forEach(function (el) {
+    el.addEventListener("click", function () {
+      if (window.innerWidth <= 980) {
+        const submenu = this.nextElementSibling;
+        submenu.style.display =
+          submenu.style.display === "block" ? "none" : "block";
+      }
+    });
+  });
+
+  function updateHeader() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.10 });
+
+  document.querySelectorAll(".reveal").forEach(function(el) {
+    observer.observe(el);
+  });
+});
+</script>
+
+</body>
+</html>

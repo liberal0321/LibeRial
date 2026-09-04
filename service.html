@@ -1,0 +1,120 @@
+---
+nav_group: auction
+footer_class: service-footer
+footer_variant: rich
+copyright_years: "2025-2026"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オークション代行 | 株式会社LibeRal</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="service.css">
+</head>
+<body>
+
+{% include header.html %}
+
+<section class="service-hero">
+  <div class="service-hero-bg"></div>
+  <div class="service-hero-overlay"></div>
+  <div class="service-hero-content">
+    <span class="page-kicker">AUCTION SERVICE</span>
+    <h1>オークション代行</h1>
+    <p>全国のオークション会場から、希望の一台へ。</p>
+  </div>
+</section>
+
+<main>
+  <section class="service-section reveal">
+    <div class="section-heading">
+      <span class="section-en">ABOUT SERVICE</span>
+      <h2>オークション代行とは</h2>
+      <p>在庫に縛られず、条件から探す中古車購入という選択肢。</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-copy">
+        <h2>オークション代行</h2>
+    <p>お客様からオーダーを受けて全国のオークション会場より仕入れが可能です。</p>
+    <p>マイナーな車種や珍しい色などこだわりの強い方で希望の条件で見つからない方や</p>
+    <p>大型販売店などは店舗の高額な家賃や保管費用が車両代金に上乗せされているため安く購入されたい方にオススメです。</p>
+    <p>また販売だけでなく代行出品も可能ですので、特殊な輸入車や高額車両の代行出品も行っています。</p>
+      </div>
+
+      <div class="service-points">
+        <div class="point-card">
+          <span class="point-number">01</span>
+          <h3>全国から探せる</h3>
+          <p>店頭在庫だけではなく、全国のオークション会場からご希望の条件に合う車両を探せます。</p>
+        </div>
+
+        <div class="point-card">
+          <span class="point-number">02</span>
+          <h3>在庫コストを抑える</h3>
+          <p>大型店舗の家賃や長期保管コストを抱えにくい仕組みで、価格面でも合理的な提案を目指します。</p>
+        </div>
+
+        <div class="point-card">
+          <span class="point-number">03</span>
+          <h3>代行出品にも対応</h3>
+          <p>販売だけでなく、特殊な輸入車や高額車両などのオークション代行出品にも対応しています。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-cta">
+      <div>
+        <span class="cta-kicker">CONTACT</span>
+        <h3>お探しの条件をお聞かせください。</h3>
+        <p>車種・年式・色・予算など、ご希望に合わせてご相談いただけます。</p>
+      </div>
+      <a href="contact.html" class="service-button">お問い合わせ <span>→</span></a>
+    </div>
+  </section>
+</main>
+
+{% include footer.html %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+  const header = document.querySelector(".site-header");
+
+  hamburger.addEventListener("click", function () {
+    nav.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".toggle-submenu").forEach(function (el) {
+    el.addEventListener("click", function () {
+      if (window.innerWidth <= 980) {
+        const submenu = this.nextElementSibling;
+        submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+      }
+    });
+  });
+
+  function updateHeader() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(".reveal").forEach(function(el) {
+    observer.observe(el);
+  });
+});
+</script>
+
+</body>
+</html>

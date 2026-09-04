@@ -1,0 +1,622 @@
+---
+nav_group: sales
+copyright_years: "2025-2026"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在庫車両 | 株式会社LibeRal</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="zaiko.css">
+</head>
+<body>
+
+{% include header.html %}
+
+<section class="stock-hero">
+  <div class="stock-hero-bg"></div>
+  <div class="stock-hero-overlay"></div>
+  <div class="stock-hero-content">
+    <span class="page-kicker">STOCK CARS</span>
+    <h1>在庫車両</h1>
+    <p>条件から、あなたに合う一台を。</p>
+  </div>
+</section>
+
+<main>
+  <section class="stock-section reveal">
+    <div class="section-heading">
+      <span class="section-en">SEARCH</span>
+      <h2>在庫を検索</h2>
+      <p>メーカー・年式・走行距離・価格・キーワードから絞り込みできます。</p>
+    </div>
+
+    <div class="search-panel">
+      <div class="search-tabs" role="tablist" aria-label="在庫検索">
+        <button class="search-tab active" type="button" data-tab="conditions">条件から探す</button>
+        <button class="search-tab" type="button" data-tab="keyword">キーワードから探す</button>
+      </div>
+
+      <div class="search-content active" id="conditions">
+        <div class="filter-grid">
+          <label>
+            <span>メーカー</span>
+            <select id="makerFilter">
+              <option value="">すべて</option>
+            </select>
+          </label>
+
+          <label>
+            <span>年式</span>
+            <select id="yearFilter">
+              <option value="">すべて</option>
+              <option value="2020">令和2年以降</option>
+              <option value="2010">平成22年以降</option>
+              <option value="2000">平成12年以降</option>
+            </select>
+          </label>
+
+          <label>
+            <span>走行距離</span>
+            <select id="mileageFilter">
+              <option value="">すべて</option>
+              <option value="50000">5万km以下</option>
+              <option value="70000">7万km以下</option>
+              <option value="100000">10万km以下</option>
+              <option value="150000">15万km以下</option>
+            </select>
+          </label>
+
+          <label>
+            <span>車両総額</span>
+            <select id="priceFilter">
+              <option value="">すべて</option>
+              <option value="1000000">100万円以下</option>
+              <option value="2000000">200万円以下</option>
+              <option value="3000000">300万円以下</option>
+              <option value="4000000">400万円以下</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="search-content" id="keyword">
+        <div class="keyword-row">
+          <label class="keyword-box">
+            <span>キーワード</span>
+            <input id="keywordFilter" type="search" placeholder="例：BMW、MT、ジムニー、スポーツカー">
+          </label>
+        </div>
+      </div>
+
+      <div class="search-actions">
+        <button type="button" id="searchButton" class="search-button">この条件で検索</button>
+        <button type="button" id="resetButton" class="reset-button">条件をリセット</button>
+      </div>
+    </div>
+
+    <div class="stock-toolbar">
+      <p><strong id="resultCount">4</strong> 台の在庫があります</p>
+      <label>
+        <span>並び替え</span>
+        <select id="sortFilter">
+          <option value="default">おすすめ順</option>
+          <option value="priceAsc">価格が安い順</option>
+          <option value="priceDesc">価格が高い順</option>
+          <option value="mileageAsc">走行距離が少ない順</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="cars" id="carsGrid">
+
+      <article class="car-card"
+        data-maker="BMW"
+        data-year="2014"
+        data-mileage="69000"
+        data-price="2980000"
+        data-keywords="BMW 2シリーズクーペ M235i 6MT スポーツカー MT">
+        <div class="car-image">
+          <img src="zaiko1.jpg" alt="BMW 2シリーズクーペ M235i">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">BMW</span>
+          <h3>2シリーズクーペ M235i 6MT</h3>
+
+          <div class="spec-list">
+            <span>平成26年</span>
+            <span>69,000km</span>
+            <span>6MT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>298.0<small>万円</small></strong>
+            <p>車両本体価格 293.0万円</p>
+          </div>
+
+          <p class="inspection">車検：令和8年12月</p>
+          <a href="contact.html?car=BMW%20M235i" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="トヨタ"
+        data-year="2001"
+        data-mileage="69000"
+        data-price="1480000"
+        data-keywords="トヨタ チェイサー アバンテ ロードリー AT ネオクラシック">
+        <div class="car-image">
+          <img src="zaiko2.jpg" alt="トヨタ チェイサー">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">TOYOTA</span>
+          <h3>チェイサー アバンテローデリー AT</h3>
+
+          <div class="spec-list">
+            <span>平成13年</span>
+            <span>69,000km</span>
+            <span>AT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>148.0<small>万円</small></strong>
+            <p>車両本体価格 138.0万円</p>
+          </div>
+
+          <p class="inspection">車検：車検整備付き</p>
+          <a href="contact.html?car=トヨタ%20チェイサー" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="ダイハツ"
+        data-year="2010"
+        data-mileage="135000"
+        data-price="440000"
+        data-keywords="ダイハツ ミラココア ココアX AT 軽自動車">
+        <div class="car-image">
+          <img src="zaiko3.jpg" alt="ダイハツ ミラココア">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">DAIHATSU</span>
+          <h3>ミラココア ココアX AT</h3>
+
+          <div class="spec-list">
+            <span>平成22年</span>
+            <span>135,000km</span>
+            <span>AT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>44.0<small>万円</small></strong>
+            <p>車両本体価格 39.0万円</p>
+          </div>
+
+          <p class="inspection">車検：令和10年8月</p>
+          <a href="contact.html?car=ダイハツ%20ミラココア" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="スズキ"
+        data-year="2020"
+        data-mileage="65000"
+        data-price="3980000"
+        data-keywords="スズキ ジムニーシエラ JC AT SUV 4WD">
+        <div class="car-image">
+          <img src="zaiko4.jpg" alt="スズキ ジムニーシエラ">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">SUZUKI</span>
+          <h3>ジムニーシエラ JC AT</h3>
+
+          <div class="spec-list">
+            <span>令和2年</span>
+            <span>65,000km</span>
+            <span>AT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>398.0<small>万円</small></strong>
+            <p>車両本体価格 388.0万円</p>
+          </div>
+
+          <p class="inspection">車検：令和9年9月</p>
+          <a href="contact.html?car=スズキ%20ジムニーシエラ" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="ホンダ"
+        data-year="2016"
+        data-mileage="109000"
+        data-price="1780000"
+        data-keywords="ホンダ S660 α 6MT オープン">
+        <div class="car-image">
+          <img src="zaiko5.jpg" alt="ホンダ S660">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">HONDA</span>
+          <h3>S660 α 6MT</h3>
+
+          <div class="spec-list">
+            <span>平成28年</span>
+            <span>109,000km</span>
+            <span>6MT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>178.0<small>万円</small></strong>
+            <p>車両本体価格 168.0万円</p>
+          </div>
+
+          <p class="inspection">車検：令和10年3月</p>
+          <a href="contact.html?car=ホンダ%20S660" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="MINI"
+        data-year="2024"
+        data-mileage="7000"
+        data-price="3580000"
+        data-keywords="MINI クーパーSE AT EV">
+        <div class="car-image">
+          <img src="zaiko6.jpg" alt="MINI クーパーSE">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">MINI</span>
+          <h3>MINI クーパーSE AT</h3>
+
+          <div class="spec-list">
+            <span>令和6年</span>
+            <span>7,000km</span>
+            <span>AT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>358.0<small>万円</small></strong>
+            <p>車両本体価格 348.0万円</p>
+          </div>
+
+          <p class="inspection">車検：令和9年12月</p>
+          <a href="contact.html?car=MINI%20クーパーSE" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="レクサス"
+        data-year="2006"
+        data-mileage="129000"
+        data-price="780000"
+        data-keywords="レクサス IS バージョンL AT セダン">
+        <div class="car-image">
+          <img src="zaiko7.jpg" alt="IS バージョンL">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">LEXUS</span>
+          <h3>レクサス IS バージョンL AT</h3>
+
+          <div class="spec-list">
+            <span>平成18年</span>
+            <span>129,000km</span>
+            <span>AT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>78.0<small>万円</small></strong>
+            <p>車両本体価格 68.0万円</p>
+          </div>
+
+          <p class="inspection">車検：車検整備付き</p>
+          <a href="contact.html?car=レクサス%20IS" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="ダイハツ"
+        data-year="2020"
+        data-mileage="63000"
+        data-price="880000"
+        data-keywords="ダイハツ ハイゼットカーゴ セパレート2シーター AT 軽バン">
+        <div class="car-image">
+          <img src="zaiko8.jpg" alt="ハイゼットカーゴ セパレート2シーター">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">DAIHATSU</span>
+          <h3>ハイゼットカーゴ セパレート2シーター AT</h3>
+
+          <div class="spec-list">
+            <span>令和2年</span>
+            <span>63,000km</span>
+            <span>AT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>88.0<small>万円</small></strong>
+            <p>車両本体価格 78.0万円</p>
+          </div>
+
+          <p class="inspection">車検：令和10年5月</p>
+          <a href="contact.html?car=ダイハツ%20ハイゼットカーゴ" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="トヨタ"
+        data-year="2007"
+        data-mileage="62000"
+        data-price="540000"
+        data-keywords="トヨタ ウィッシュ G助手席リフトアップシート AT ミニバン">
+        <div class="car-image">
+          <img src="zaiko9.jpg" alt="ウィッシュ G助手席リフトアップシート">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">TOYOTA</span>
+          <h3>ウィッシュ G助手席リフトアップシート AT</h3>
+
+          <div class="spec-list">
+            <span>平成19年</span>
+            <span>62,000km</span>
+            <span>AT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>54.0<small>万円</small></strong>
+            <p>車両本体価格 44.0万円</p>
+          </div>
+
+          <p class="inspection">車検：車検整備付き</p>
+          <a href="contact.html?car=トヨタ%20ウィッシュ" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="スズキ"
+        data-year="2021"
+        data-mileage="70000"
+        data-price="3780000"
+        data-keywords="スズキ ジムニーシエラ JC AT SUV">
+        <div class="car-image">
+          <img src="zaiko10.jpg" alt="ジムニーシエラ JC">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">SUZUKI</span>
+          <h3>ジムニーシエラ JC AT</h3>
+
+          <div class="spec-list">
+            <span>令和3年</span>
+            <span>70,000km</span>
+            <span>AT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>378.0<small>万円</small></strong>
+            <p>車両本体価格 368.0万円</p>
+          </div>
+
+          <p class="inspection">車検：令和10年4月</p>
+          <a href="contact.html?car=スズキ%20ジムニーシエラ" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="car-card"
+        data-maker="トヨタ"
+        data-year="2018"
+        data-mileage="42000"
+        data-price="1280000"
+        data-keywords="トヨタ ルーミー XS AT コンパクト">
+        <div class="car-image">
+          <img src="zaiko11.jpg" alt="ルーミー XS">
+          <span class="stock-badge">STOCK</span>
+        </div>
+        <div class="info">
+          <span class="car-maker">TOYOTA</span>
+          <h3>ルーミー XS AT</h3>
+
+          <div class="spec-list">
+            <span>平成30年</span>
+            <span>42,000km</span>
+            <span>AT</span>
+          </div>
+
+          <div class="price-area">
+            <span>支払総額</span>
+            <strong>128.0<small>万円</small></strong>
+            <p>車両本体価格 118.0万円</p>
+          </div>
+
+          <p class="inspection">車検：令和9年3月</p>
+          <a href="contact.html?car=トヨタ%20ルーミー" class="detail-button">詳細・お問い合わせ <span>→</span></a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="no-results" id="noResults">
+      <strong>該当する在庫がありません。</strong>
+      <p>条件を変更して再検索するか、お探しの車両をお問い合わせください。</p>
+    </div>
+
+    <div class="stock-cta">
+      <div>
+        <span class="cta-kicker">ORDER CAR</span>
+        <h3>掲載在庫にない車も探せます。</h3>
+        <p>非掲載在庫や全国のオークションから、ご希望条件に合わせてお探しします。</p>
+      </div>
+      <a href="contact.html" class="cta-button">車を探してもらう <span>→</span></a>
+    </div>
+
+  </section>
+</main>
+
+{% include footer.html %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+  const header = document.querySelector(".site-header");
+
+  hamburger.addEventListener("click", function () {
+    nav.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".toggle-submenu").forEach(function (el) {
+    el.addEventListener("click", function () {
+      if (window.innerWidth <= 980) {
+        const submenu = this.nextElementSibling;
+        submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+      }
+    });
+  });
+
+  function updateHeader() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(".reveal").forEach(function(el) {
+    observer.observe(el);
+  });
+
+  const tabs = document.querySelectorAll(".search-tab");
+  const contents = document.querySelectorAll(".search-content");
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener("click", function() {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+  });
+
+  const makerFilter = document.getElementById("makerFilter");
+  const yearFilter = document.getElementById("yearFilter");
+  const mileageFilter = document.getElementById("mileageFilter");
+  const priceFilter = document.getElementById("priceFilter");
+  const keywordFilter = document.getElementById("keywordFilter");
+  const sortFilter = document.getElementById("sortFilter");
+  const carsGrid = document.getElementById("carsGrid");
+  const resultCount = document.getElementById("resultCount");
+  const noResults = document.getElementById("noResults");
+
+  // 在庫カードの data-maker からメーカー候補を自動生成
+  function populateMakerOptions() {
+    const cards = Array.from(carsGrid.querySelectorAll(".car-card"));
+    const makers = [...new Set(
+      cards
+        .map(card => card.dataset.maker)
+        .filter(Boolean)
+    )].sort((a, b) => a.localeCompare(b, "ja"));
+
+    makerFilter.innerHTML = '<option value="">すべて</option>';
+
+    makers.forEach(function(maker) {
+      const option = document.createElement("option");
+      option.value = maker;
+      option.textContent = maker;
+      makerFilter.appendChild(option);
+    });
+  }
+
+  function filterCars() {
+    const maker = makerFilter.value;
+    const year = Number(yearFilter.value || 0);
+    const mileage = Number(mileageFilter.value || 0);
+    const price = Number(priceFilter.value || 0);
+    const keyword = keywordFilter.value.trim().toLowerCase();
+
+    const cards = Array.from(carsGrid.querySelectorAll(".car-card"));
+    let visible = 0;
+
+    cards.forEach(function(card) {
+      const matchesMaker = !maker || card.dataset.maker === maker;
+      const matchesYear = !year || Number(card.dataset.year) >= year;
+      const matchesMileage = !mileage || Number(card.dataset.mileage) <= mileage;
+      const matchesPrice = !price || Number(card.dataset.price) <= price;
+      const matchesKeyword = !keyword || card.dataset.keywords.toLowerCase().includes(keyword);
+
+      const match = matchesMaker && matchesYear && matchesMileage && matchesPrice && matchesKeyword;
+      card.hidden = !match;
+      if (match) visible++;
+    });
+
+    resultCount.textContent = visible;
+    noResults.style.display = visible === 0 ? "block" : "none";
+    sortCars();
+  }
+
+  function sortCars() {
+    const cards = Array.from(carsGrid.querySelectorAll(".car-card"));
+    const type = sortFilter.value;
+
+    cards.sort(function(a, b) {
+      if (type === "priceAsc") return Number(a.dataset.price) - Number(b.dataset.price);
+      if (type === "priceDesc") return Number(b.dataset.price) - Number(a.dataset.price);
+      if (type === "mileageAsc") return Number(a.dataset.mileage) - Number(b.dataset.mileage);
+      return 0;
+    });
+
+    cards.forEach(card => carsGrid.appendChild(card));
+  }
+
+  document.getElementById("searchButton").addEventListener("click", filterCars);
+  sortFilter.addEventListener("change", sortCars);
+
+  document.getElementById("resetButton").addEventListener("click", function() {
+    makerFilter.value = "";
+    yearFilter.value = "";
+    mileageFilter.value = "";
+    priceFilter.value = "";
+    keywordFilter.value = "";
+    sortFilter.value = "default";
+    filterCars();
+  });
+
+  keywordFilter.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") filterCars();
+  });
+
+// メーカー候補を在庫データから自動生成
+populateMakerOptions();
+
+// 初回表示時に在庫台数を自動計算
+filterCars();
+
+});
+</script>
+
+</body>
+</html>

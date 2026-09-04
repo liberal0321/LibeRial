@@ -1,0 +1,91 @@
+---
+nav_group: auction
+footer_class: sales-footer
+footer_variant: rich
+copyright_years: "2025-2026"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代行販売 | 株式会社LibeRal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="daikouhanbai.css">
+</head>
+<body>
+{% include header.html %}
+
+<section class="sales-hero">
+  <div class="sales-hero-bg"></div><div class="sales-hero-overlay"></div>
+  <div class="sales-hero-content">
+    <span class="page-kicker">CONSIGNMENT SALES</span>
+    <h1>代行販売</h1>
+    <p>オークション相場だけでは届かない価値を、小売市場へ。</p>
+  </div>
+</section>
+
+<main>
+<section class="sales-section reveal">
+  <div class="section-heading">
+    <span class="section-en">ABOUT</span>
+    <h2>代行販売について</h2>
+    <p>買取相場と小売価格の差を活かし、より希望金額に近い売却を目指します。</p>
+  </div>
+
+  <div class="intro-card">
+    <p>オークション相場と売値の差額が大きい車両や、オークション相場では希望金額に届かないものの、売値よりは希望金額が下回るケースなどにご提案しております。</p>
+    <div class="feature-banner"><strong>車両預かりなしにも対応</strong><span>売れるまでそのままお乗りいただく形での代行販売も可能です。</span></div>
+    <div class="vehicle-tags">
+      <span>旧車スポーツカー</span><span>ネオクラシック</span><span>輸入車</span>
+      <span>AT→MT載せ替え公認車両</span><span>ドリ車</span><span>レースレギュレーション車両</span>
+    </div>
+  </div>
+
+  <div class="media-section">
+    <div class="section-heading compact"><span class="section-en">MEDIA</span><h2>掲載媒体</h2></div>
+    <div class="media-grid">
+      <div class="media-card"><span class="media-label">RETAIL</span><h3>テモトク</h3><p>小売り掲載媒体「テモトク」へ代行掲載します。</p></div>
+      <div class="media-card"><span class="media-label">BtoB</span><h3>オートサーバー</h3><p>業界最大級の業販サイト「オートサーバー」へ代行掲載します。</p></div>
+    </div>
+  </div>
+
+  <div class="flow-heading"><span class="section-en">FLOW</span><h2>代行販売の流れ</h2></div>
+  <div class="flow-list">
+    <div class="flow-item"><span class="flow-number">01</span><div><h3>車両情報・希望金額の確認</h3><p>車両詳細をいただき、売値とご希望金額のすり合わせ・残債金額の確認を行います。</p></div></div>
+    <div class="flow-item"><span class="flow-number">02</span><div><h3>売約時の買取金額をご提示</h3><p>売約時の買取金額と値引き範囲を確認します。</p></div></div>
+    <div class="flow-item"><span class="flow-number">03</span><div><h3>代行販売契約の締結</h3><p>条件をご確認いただき、代行販売契約書を締結します。</p></div></div>
+    <div class="flow-item"><span class="flow-number">04</span><div><h3>掲載写真の撮影</h3><p>掲載写真を撮影します。お客様ご自身で撮影した写真を送信いただく形も可能です。</p></div></div>
+    <div class="flow-item"><span class="flow-number">05</span><div><h3>各媒体へ掲載</h3><p>各媒体への掲載を開始します。車両預かりなしでの代行販売にも対応可能です。</p></div></div>
+    <div class="flow-item"><span class="flow-number">06</span><div><h3>問い合わせ状況を共有</h3><p>問い合わせ状況を共有し、実車確認希望があれば車両お預かりについてご相談します。</p></div></div>
+    <div class="flow-item"><span class="flow-number">07</span><div><h3>ご成約</h3><p>購入希望者との条件が整い次第、ご成約となります。</p></div></div>
+    <div class="flow-item"><span class="flow-number">08</span><div><h3>買取契約・名義変更書類</h3><p>買取契約書を締結し、名義変更書類をご提出いただきます。車両預かりなしの場合は車両のお引渡しとなります。</p></div></div>
+    <div class="flow-item"><span class="flow-number">09</span><div><h3>代金のお振込み</h3><p>購入者の購入代金が全額着金後、代金をお振込みします。</p></div></div>
+  </div>
+
+  <div class="notice-card">
+    <h3>代行費用・諸条件について</h3>
+    <p>代行費用や諸条件などは、車検の有無や残債等により変動いたしますので、まずはお気軽にお問い合わせください。</p>
+  </div>
+
+  <div class="sales-cta">
+    <div><span class="cta-kicker">CONTACT</span><h3>その車、本当に買取だけが選択肢ですか？</h3><p>車両情報とご希望金額を確認し、代行販売が適しているかご案内します。</p></div>
+    <a href="contact.html" class="sales-button">お問い合わせ <span>→</span></a>
+  </div>
+</section>
+</main>
+
+{% include footer.html %}
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+ const h=document.getElementById("hamburger"),n=document.getElementById("nav"),header=document.querySelector(".site-header");
+ h.addEventListener("click",()=>n.classList.toggle("active"));
+ document.querySelectorAll(".toggle-submenu").forEach(el=>el.addEventListener("click",function(){if(window.innerWidth<=980){const s=this.nextElementSibling;s.style.display=s.style.display==="block"?"none":"block";}}));
+ function u(){header.classList.toggle("scrolled",window.scrollY>40)}u();window.addEventListener("scroll",u,{passive:true});
+ const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.08});
+ document.querySelectorAll(".reveal").forEach(el=>o.observe(el));
+});
+</script>
+</body>
+</html>

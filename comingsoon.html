@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社案内 | 株式会社LibeRal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ロゴ部分（白背景） */
+    .logo-area {
+      background: #fff;
+      padding: 10px 20px;
+    }
+    .logo-area img {
+      height: 60px;
+    }
+
+    /* ナビゲーション全体（黒背景） */
+    nav {
+      background: #333;
+      position: relative;
+    }
+
+    /* ハンバーガー */
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      color: #fff;
+      padding: 12px 20px;
+      cursor: pointer;
+    }
+
+    /* メニュー */
+    .menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .menu > li {
+      position: relative;
+    }
+    .menu > li > a,
+    .toggle-submenu {
+      display: block;
+      padding: 12px 20px;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .menu > li > a:hover,
+    .toggle-submenu:hover {
+      background: #444;
+    }
+
+    /* サブメニュー */
+    .submenu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #444;
+      display: none;
+      min-width: 180px;
+    }
+    .submenu li a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .submenu li a:hover {
+      background: #555;
+    }
+
+    /* PCではhoverで表示 */
+    .dropdown:hover .submenu {
+      display: block;
+    }
+
+    /* スマホ用 */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      nav ul.menu {
+        display: none;
+        flex-direction: column;
+      }
+      nav.active ul.menu {
+        display: flex;
+      }
+      .submenu {
+        position: static;
+        background: #555;
+      }
+      .dropdown:hover .submenu {
+        display: none; /* hover無効 */
+      }
+    }
+
+    /* コンテンツ部分 */
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      margin-bottom: 20px;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <div class="logo-area">
+      <img src="test.jpg" alt="会社ロゴ" class="logo">
+    </div>
+
+    <nav id="nav">
+      <!-- ハンバーガーメニュー -->
+      <div class="hamburger" id="hamburger">☰</div>
+
+      <ul class="menu">
+        <li><a href="index.html">ホーム</a></li>
+        <li class="dropdown">
+          <span class="toggle-submenu">オークション代行 ▼</span>
+          <ul class="submenu">
+            <li><a href="service.html">オークション代行とは</a></li>
+            <li><a href="daikouhanbai.html">代行販売</a></li>
+            <li><a href="daikoushuppin.html">代行出品</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <span class="toggle-submenu">車両販売 ▼</span>
+          <ul class="submenu">
+            <li><a href="hanbai.html">販売提案</a></li>
+            <li><a href="zaiko.html">在庫車両</a></li>
+            <li><a href="itaku.html">委託販売</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <span class="toggle-submenu">車両買取 ▼</span>
+          <ul class="submenu">
+            <li><a href="kaitori.html">高価買取の取り組み</a></li>
+            <li><a href="kojin.html">個人売買代行</a></li>
+            <li><a href="satei.html">査定依頼はコチラ</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <span class="toggle-submenu">会社概要 ▼</span>
+          <ul class="submenu">
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="ninka.html">認可・登録番号</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- コンテンツ -->
+  <section id="service">
+ <h2>近日公開</h2>
+    <p>COMING SOON....</p>
+  </section>
+  <!-- フッター -->
+  <footer>
+    <p>&copy; 2025 株式会社LibeRal（リベラル）</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // ハンバーガー開閉
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("nav");
+      hamburger.addEventListener("click", function () {
+        nav.classList.toggle("active");
+      });
+
+      // サブメニュー開閉（スマホ用）
+      document.querySelectorAll(".toggle-submenu").forEach(function (el) {
+        el.addEventListener("click", function () {
+          if (window.innerWidth <= 768) {
+            const submenu = this.nextElementSibling;
+            submenu.style.display =
+              submenu.style.display === "block" ? "none" : "block";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+---
+nav_group: company
+copyright_years: "2025-2026"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社LibeRalの認可・登録番号をご案内します。">
+  <title>認可・登録番号 | 株式会社LibeRal</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ninka.css">
+</head>
+<body>
+
+{% include header.html %}
+
+<section class="license-hero">
+  <div class="license-hero-bg"></div>
+  <div class="license-hero-overlay"></div>
+
+  <div class="license-hero-content">
+    <span class="page-kicker">LICENSE & REGISTRATION</span>
+    <h1>認可・登録番号</h1>
+    <p>法令に基づく許認可・登録情報をご案内します。</p>
+  </div>
+</section>
+
+<main>
+  <section class="license-section">
+
+    <div class="license-intro reveal">
+      <div class="section-heading">
+        <span class="section-en">COMPANY LICENSE</span>
+        <h2>認可・登録情報</h2>
+      </div>
+
+      <div class="intro-copy">
+        <p>
+          株式会社LibeRalでは、中古車売買に必要な各種認可・登録のもと、
+          適正な事業運営を行っています。
+        </p>
+      </div>
+    </div>
+
+    <div class="license-grid reveal">
+      <article class="license-card">
+        <span class="license-no">01</span>
+        <span class="license-label">SECONDHAND DEALER LICENSE</span>
+        <h3>古物商許可番号</h3>
+
+        <div class="license-value">
+          <span>千葉県公安委員会</span>
+          <strong>第441410000925号</strong>
+        </div>
+      </article>
+
+      <article class="license-card">
+        <span class="license-no">02</span>
+        <span class="license-label">INVOICE REGISTRATION</span>
+        <h3>インボイス登録番号</h3>
+
+        <div class="license-value">
+          <strong>T6040001138012</strong>
+        </div>
+      </article>
+    </div>
+
+    <section class="trust-section reveal">
+      <div class="trust-copy">
+        <span class="section-en">TRUST & COMPLIANCE</span>
+        <h2>安心してお取引いただくために。</h2>
+        <p>
+          許認可・登録情報を明示し、透明性のある事業運営を大切にしています。
+          お車の売却・購入・各種代行サービスについて、安心してご相談ください。
+        </p>
+      </div>
+
+      <div class="trust-mark" aria-hidden="true">
+        <span>AUTHORIZED</span>
+        <strong>LibeRal</strong>
+        <small>CHIBA / JAPAN</small>
+      </div>
+    </section>
+
+    <section class="license-cta reveal">
+      <div>
+        <span class="cta-kicker">CONTACT</span>
+        <h3>サービスについてのご質問はこちら。</h3>
+        <p>車両売買や各種代行サービスについて、お気軽にお問い合わせください。</p>
+      </div>
+      <a href="contact.html" class="cta-button">お問い合わせ <span>→</span></a>
+    </section>
+
+  </section>
+</main>
+
+{% include footer.html %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+  const header = document.querySelector(".site-header");
+
+  hamburger.addEventListener("click", function () {
+    nav.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".toggle-submenu").forEach(function (el) {
+    el.addEventListener("click", function () {
+      if (window.innerWidth <= 980) {
+        const submenu = this.nextElementSibling;
+        submenu.style.display =
+          submenu.style.display === "block" ? "none" : "block";
+      }
+    });
+  });
+
+  function updateHeader() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.10 });
+
+  document.querySelectorAll(".reveal").forEach(function(el) {
+    observer.observe(el);
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+---
+nav_group: sales
+footer_class: consign-footer
+footer_variant: rich
+copyright_years: "2025-2026"
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>委託販売 | 株式会社LibeRal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="itaku.css">
+</head>
+<body>
+{% include header.html %}
+<section class="consign-hero"><div class="consign-hero-bg"></div><div class="consign-hero-overlay"></div><div class="consign-hero-content"><span class="page-kicker">CONSIGNMENT</span><h1>委託販売</h1><p>今のオーナーから、次のオーナーへ。</p></div></section>
+<main><section class="consign-section reveal">
+  <div class="section-heading"><span class="section-en">ABOUT CONSIGNMENT</span><h2>委託販売とは</h2><p>所有したまま売却活動を行い、中間コストを抑えて売主・買主双方へ還元する販売方法です。</p></div>
+  <div class="intro-card"><p>委託販売とは弊社自社在庫ではなく、オーナー様が所有したまま売りに出している車両になります。</p><p>オークションや買取業者、販売店として在庫維持するコストをカットすることができるため、そのコストカット分を売主・買主双方に還元することが可能です。</p><p>売主はより高く、買主はより安く。中間コストをできるだけ削ることで、双方にメリットのある売買を目指します。</p></div>
+  <div class="compare-section"><div class="section-heading compact"><span class="section-en">FLOW COMPARISON</span><h2>売買の流れを比較</h2></div><div class="compare-grid">
+    <div class="flow-card liberal-flow"><span class="flow-label">LibeRal CONSIGNMENT</span><h3>委託販売</h3><div class="flow-line"><div class="flow-node">現所有者</div><div class="flow-arrow">→</div><div class="flow-node accent">LibeRalで掲載</div><div class="flow-arrow">→</div><div class="flow-node">新オーナー</div></div><p>仲介業者や在庫維持コストを極限まで削ることで、通常売値よりも安く掲載しながら、売主にも高く還元できる可能性があります。</p></div>
+    <div class="flow-card normal-flow"><span class="flow-label muted">GENERAL MARKET</span><h3>一般的な流通</h3><div class="flow-line vertical"><div class="flow-node">現所有者</div><div class="flow-arrow">↓</div><div class="flow-node">買取専門業者</div><div class="flow-arrow">↓</div><div class="flow-node">オークション</div><div class="flow-arrow">↓</div><div class="flow-node">販売店</div><div class="flow-arrow">↓</div><div class="flow-node">新オーナー</div></div><p>多くの仲介業者の手数料、車両移動コスト、保管コストなどが発生し、それぞれの利益や経費が販売価格へ積み上がっていきます。</p></div>
+  </div></div>
+  <div class="benefit-grid"><div class="benefit-card"><span>SELLER</span><h3>売主はより高く</h3><p>余分な中間マージンを減らし、売却金額へ還元できる仕組みを目指します。</p></div><div class="benefit-card"><span>BUYER</span><h3>買主はより安く</h3><p>在庫維持費や複数業者の利益を抑えることで、購入価格を抑えやすくします。</p></div><div class="benefit-card"><span>OWNER TO OWNER</span><h3>次のオーナーへつなぐ</h3><p>車の価値と想いを、現オーナーから次のオーナーへ直接に近い形でつなぎます。</p></div></div>
+  <section class="brand-message"><div class="brand-message-inner"><span class="section-en">OUR MISSION</span><h2>LibeRalが目指す革新的な売買</h2><p class="brand-philosophy">LibeRal and innovative car dealings</p><p class="brand-jp">自由で革新的な自動車の売買。</p><div class="mission-divider"></div><h3>BRIDGE THE DRIVERS</h3><p class="mission-en">Connecting one owner to the next.</p><p class="mission-jp">今のオーナーから、次のオーナーへ。</p><p class="mission-copy">中間マージンや手数料をカットし、売主にも買主にも金額面で還元できる。LibeRalは、オーナーをつなぐ架け橋になります。</p></div></section>
+  <div class="consign-cta"><div><span class="cta-kicker">CONTACT</span><h3>委託販売について相談してみませんか？</h3><p>車両情報やご希望金額を確認し、委託販売に向いているかご案内します。</p></div><a href="contact.html" class="cta-button">お問い合わせ <span>→</span></a></div>
+</section></main>
+{% include footer.html %}
+<script>
+document.addEventListener("DOMContentLoaded",function(){const h=document.getElementById("hamburger"),n=document.getElementById("nav"),header=document.querySelector(".site-header");h.addEventListener("click",()=>n.classList.toggle("active"));document.querySelectorAll(".toggle-submenu").forEach(el=>el.addEventListener("click",function(){if(window.innerWidth<=980){const s=this.nextElementSibling;s.style.display=s.style.display==="block"?"none":"block";}}));function u(){header.classList.toggle("scrolled",window.scrollY>40)}u();window.addEventListener("scroll",u,{passive:true});const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.08});document.querySelectorAll(".reveal").forEach(el=>o.observe(el));});
+</script>
+</body></html>
