@@ -21,11 +21,14 @@ body{background:var(--lr-paper);color:var(--lr-ink);}
   color:#fff;
 }
 .lr-hero-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(circle at 75% 28%,rgba(30,95,180,.25),transparent 33%),
-    radial-gradient(circle at 22% 65%,rgba(255,255,255,.06),transparent 25%),
-    linear-gradient(120deg,#030303 0%,#0b0b0c 48%,#111720 100%);
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(0,0,0,.30), rgba(0,0,0,.30)),
+    url("liberial-collection.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 .lr-hero-grid{
   position:absolute;inset:0;opacity:.11;
