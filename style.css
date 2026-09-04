@@ -547,48 +547,52 @@ footer::before {
     margin-left: auto;
   }
 
-  .menu {
-  display:none;
-  position:fixed;
+ .menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
 
-  /* 現在のスマホヘッダー88pxに合わせる */
-  top:88px;
-  left:0;
-  right:0;
+  height: auto;
+  max-height: none;
+  overflow: visible;
 
-  /* ヘッダー下から画面下まで完全に覆う */
-  height:calc(100dvh - 88px);
-  max-height:none;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
 
-  overflow-y:auto;
-  flex-direction:column;
-  align-items:stretch;
-  gap:0;
+  padding: 8px 22px 18px;
+  background: #0b0d10;
 
-  padding:18px 28px 40px;
-
-  /* 背景を完全な黒にしてヒーローを透かさない */
-  background:#0b0d10;
-
-  z-index:9998;
-  box-shadow:none;
+  z-index: 9998;
+  box-shadow: 0 14px 30px rgba(0,0,0,.35);
 }
-.site-header{
-  z-index:9999;
+
+.site-header {
+  position: relative;
+  z-index: 9999;
 }
-  nav.active .menu {
-    display: flex;
-  }
 
-  .menu > li > a,
-  .toggle-submenu {
-    position: relative;
-    padding: 15px 10px;
-    color: #fff;
-    font-size: 14px;
-    border-bottom: 1px solid rgba(255,255,255,.08);
-  }
+nav.active .menu {
+  display: flex;
+}
 
+.menu > li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li > a {
+  display: block;
+  width: 100%;
+  padding: 18px 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
   .menu > li > a::after,
   .toggle-submenu::after {
     display: none;
