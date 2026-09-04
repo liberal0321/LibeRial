@@ -650,6 +650,10 @@ nav.active .menu {
   .cards {
     grid-template-columns: 1fr;
   }
+  .lr-hero-bg{
+  background-size: cover;
+  background-position: 30% center;
+}
 }
 
 @media (max-width: 640px) {
