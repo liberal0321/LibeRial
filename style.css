@@ -942,3 +942,62 @@ nav.active .menu {
     gap:20px;
   }
 }
+/* ===== LibeRial Mobile Header Final Fix ===== */
+@media (max-width: 980px){
+
+  /* 閉じているときは絶対に非表示 */
+  .site-header nav .menu{
+    display:none !important;
+
+    position:fixed;
+    top:88px;
+    left:0;
+    right:0;
+
+    width:100%;
+    height:auto;
+    margin:0;
+    padding:10px 24px 20px;
+
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+
+    background:#0b0d10;
+    box-shadow:0 18px 35px rgba(0,0,0,.35);
+    z-index:9998;
+  }
+
+  /* 三本線を押したときだけ表示 */
+  .site-header nav.active .menu{
+    display:flex !important;
+  }
+
+  .site-header .menu > li{
+    width:100%;
+    margin:0;
+    padding:0;
+  }
+
+  .site-header .menu > li > a{
+    display:block;
+    width:100%;
+    padding:18px 10px;
+
+    text-align:center;
+    color:#fff;
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:.08em;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .site-header .menu > li > a::after{
+    display:none !important;
+  }
+
+  .site-header{
+    z-index:9999;
+  }
+}
