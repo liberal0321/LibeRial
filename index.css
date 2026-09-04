@@ -28,7 +28,7 @@ body{background:var(--lr-paper);color:var(--lr-ink);}
     linear-gradient(rgba(0,0,0,.24),rgba(0,0,0,.24)),
     url("liberial-main.jpg");
   background-size:contain;
-  background-position:center center;
+  background-position:center 38%;
   background-repeat:no-repeat;
   background-color:#050505;
 }
