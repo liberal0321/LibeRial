@@ -209,3 +209,17 @@ background-position:center bottom;
   height:auto;
   margin:0;
 }
+/* ===== Smartphone Hero Image ===== */
+@media (max-width: 640px){
+
+  .lr-hero-bg{
+    background-image:
+      linear-gradient(rgba(0,0,0,.24), rgba(0,0,0,.24)),
+      url("liberial-main-sp.png") !important;
+
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+
+}
