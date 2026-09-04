@@ -13,7 +13,8 @@ body{background:var(--lr-paper);color:var(--lr-ink);}
 
 .lr-hero{
   position:relative;
-  min-height:calc(100vh - 92px);
+  min-height:900px;
+  height:100vh;
   display:flex;
   align-items:flex-end;
   overflow:hidden;
@@ -24,11 +25,12 @@ body{background:var(--lr-paper);color:var(--lr-ink);}
   position:absolute;
   inset:0;
   background-image:
-    linear-gradient(rgba(0,0,0,.30), rgba(0,0,0,.30)),
-    url("liberial-collection.jpg");
-  background-size:cover;
-  background-position:center;
+    linear-gradient(rgba(0,0,0,.24),rgba(0,0,0,.24)),
+    url("liberial-main.jpg");
+  background-size:contain;
+  background-position:center center;
   background-repeat:no-repeat;
+  background-color:#050505;
 }
 .lr-hero-grid{
   position:absolute;inset:0;opacity:.11;
@@ -41,7 +43,7 @@ body{background:var(--lr-paper);color:var(--lr-ink);}
   position:relative;z-index:2;
   width:min(100% - 72px,1240px);
   margin:0 auto;
-  padding:120px 0 100px;
+  padding:110px 0 140px;
 }
 .lr-eyebrow{
   display:block;margin-bottom:22px;
