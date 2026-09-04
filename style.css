@@ -651,13 +651,12 @@ nav.active .menu {
     grid-template-columns: 1fr;
   }
   .lr-hero-bg{
-   .lr-hero-bg{
   background-image:
     linear-gradient(rgba(0,0,0,.24),rgba(0,0,0,.24)),
-    url('liberial-main-sp.jpg');
+    url('liberial-main-sp.png');
 
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
 }
 }
