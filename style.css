@@ -785,3 +785,50 @@ footer::before {
     font-size:38px;
   }
 }
+/* ===== LibeRial Footer Size Adjustment ===== */
+
+.liberial-footer{
+  min-height:420px;
+  padding:110px 0 45px;
+}
+
+.liberial-footer .footer-inner{
+  width:min(calc(100% - 100px),1400px);
+  min-height:240px;
+  margin:0 auto;
+  align-items:center;
+}
+
+.liberial-footer .footer-brand{
+  font-size:64px;
+  font-weight:800;
+  line-height:1;
+  margin-bottom:22px;
+}
+
+.liberial-footer .footer-tagline{
+  font-size:20px;
+  margin-bottom:14px;
+}
+
+.liberial-footer .footer-copy{
+  font-size:18px;
+  line-height:1.8;
+}
+
+.liberial-footer .footer-right{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.liberial-footer .footer-right a{
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:.05em;
+}
+
+.liberial-footer .footer-bottom{
+  margin-top:50px;
+  font-size:14px;
+}
