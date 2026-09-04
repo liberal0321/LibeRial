@@ -186,10 +186,11 @@ body{background:var(--lr-paper);color:var(--lr-ink);}
   .lr-statement h2,.lr-section-head h2,.lr-material-dark h2,.lr-coming h2{font-size:40px;}
 }
 .lr-items-showcase{
-  width:100%;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
   background:#050505;
   padding:0;
-  margin:0;
+  overflow:hidden;
 }
 
 .lr-items-showcase-inner{
@@ -202,4 +203,5 @@ body{background:var(--lr-paper);color:var(--lr-ink);}
   display:block;
   width:100%;
   height:auto;
+  margin:0;
 }
