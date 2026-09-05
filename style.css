@@ -1032,3 +1032,16 @@ nav.active .menu {
   height: auto;
   object-fit: contain;
 }
+/* COLLECTION 商品画像の表示サイズを統一 */
+.lr-product-visual{
+  width: 100%;
+  aspect-ratio: 1 / 1.25;
+  overflow: hidden;
+}
+
+.lr-product-visual img{
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover !important;
+}
