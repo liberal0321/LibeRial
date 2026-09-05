@@ -1,0 +1,120 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LibeRial LR POLO SHIRT。シンプルで洗練されたLRロゴポロシャツ。">
+  <title>LR POLO SHIRT | LibeRial</title>
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/product-polo.css' | relative_url }}">
+</head>
+<body>
+  {% include header.html %}
+
+  <main class="product-page">
+    <section class="product-shell">
+      <div class="product-gallery" aria-label="商品画像ギャラリー">
+        <div class="product-main-media">
+          <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="前の画像">‹</button>
+          <img id="productMainImage" src="{{ '/images/product/polo/polo-main.png' | relative_url }}" alt="LibeRial LR POLO SHIRT 商品イメージ">
+          <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="次の画像">›</button>
+          <div class="gallery-counter"><span id="galleryCurrent">1</span> / 6</div>
+        </div>
+
+        <div class="product-thumbs" id="productThumbs">
+          <button class="product-thumb is-active" type="button" data-image="{{ '/images/product/polo/polo-main.png' | relative_url }}" data-alt="LibeRial LR POLO SHIRT 商品イメージ">
+            <img src="{{ '/images/product/polo/polo-main.png' | relative_url }}" alt="商品全体イメージ">
+          </button>
+          <button class="product-thumb" type="button" data-image="{{ '/images/product/polo/polo-white-model.png' | relative_url }}" data-alt="LR POLO SHIRT ホワイト着用イメージ">
+            <img src="{{ '/images/product/polo/polo-white-model.png' | relative_url }}" alt="ホワイト着用イメージ">
+          </button>
+          <button class="product-thumb" type="button" data-image="{{ '/images/product/polo/polo-black-model.png' | relative_url }}" data-alt="LR POLO SHIRT ブラック着用イメージ">
+            <img src="{{ '/images/product/polo/polo-black-model.png' | relative_url }}" alt="ブラック着用イメージ">
+          </button>
+          <button class="product-thumb" type="button" data-image="{{ '/images/product/polo/polo-white-logo.png' | relative_url }}" data-alt="ホワイト生地 LRロゴ刺繍イメージ">
+            <img src="{{ '/images/product/polo/polo-white-logo.png' | relative_url }}" alt="ホワイト ロゴ刺繍イメージ">
+          </button>
+          <button class="product-thumb" type="button" data-image="{{ '/images/product/polo/polo-black-logo.png' | relative_url }}" data-alt="ブラック生地 LRロゴ刺繍イメージ">
+            <img src="{{ '/images/product/polo/polo-black-logo.png' | relative_url }}" alt="ブラック ロゴ刺繍イメージ">
+          </button>
+          <button class="product-thumb" type="button" data-image="{{ '/images/product/polo/polo-back-style.png' | relative_url }}" data-alt="LR POLO SHIRT バックスタイル">
+            <img src="{{ '/images/product/polo/polo-back-style.png' | relative_url }}" alt="バックスタイル">
+          </button>
+        </div>
+      </div>
+
+      <div class="product-info">
+        <p class="product-kicker">LIBERIAL ORIGINAL</p>
+        <h1>LR POLO SHIRT</h1>
+        <p class="product-price">¥8,800 <span>（税込）</span></p>
+        <p class="product-lead">飾らない。媚びない。素材で語る。<br>胸元にLRロゴをあしらった、LibeRialのオリジナルポロシャツ。</p>
+
+        <div class="option-block">
+          <div class="option-head"><span>COLOR</span><strong id="selectedColorLabel">WHITE</strong></div>
+          <div class="option-buttons" data-option="color">
+            <button class="option-btn is-selected" type="button" data-value="WHITE">WHITE</button>
+            <button class="option-btn" type="button" data-value="BLACK">BLACK</button>
+          </div>
+        </div>
+
+        <div class="option-block">
+          <div class="option-head"><span>SIZE</span><strong id="selectedSizeLabel">未選択</strong></div>
+          <div class="option-buttons size-buttons" data-option="size">
+            <button class="option-btn" type="button" data-value="S">S</button>
+            <button class="option-btn" type="button" data-value="M">M</button>
+            <button class="option-btn" type="button" data-value="L">L</button>
+            <button class="option-btn" type="button" data-value="XL">XL</button>
+          </div>
+        </div>
+
+        <button class="buy-button" id="buyButton" type="button" disabled>
+          <span>サイズを選択してください</span><span>→</span>
+        </button>
+        <p class="buy-note">※ 現在は商品ページ制作中のため、購入ボタンは仮表示です。</p>
+
+        <div class="product-accordion">
+          <details open>
+            <summary>PRODUCT DETAILS</summary>
+            <div class="detail-copy">
+              <p>ホワイトとブラックの2カラー展開。左胸にはLibeRialを象徴するLRロゴを配置し、背面は無地で仕上げたミニマルなデザインです。</p>
+              <dl>
+                <div><dt>カラー</dt><dd>WHITE / BLACK</dd></div>
+                <div><dt>サイズ</dt><dd>S / M / L / XL</dd></div>
+                <div><dt>ロゴ</dt><dd>LRロゴ（掲載画像は刺繍イメージ）</dd></div>
+              </dl>
+            </div>
+          </details>
+
+          <details>
+            <summary>SIZE GUIDE</summary>
+            <div class="size-table-wrap">
+              <table class="size-table">
+                <thead><tr><th>SIZE</th><th>着丈</th><th>身幅</th><th>肩幅</th><th>袖丈</th></tr></thead>
+                <tbody>
+                  <tr><th>S</th><td>未定</td><td>未定</td><td>未定</td><td>未定</td></tr>
+                  <tr><th>M</th><td>未定</td><td>未定</td><td>未定</td><td>未定</td></tr>
+                  <tr><th>L</th><td>未定</td><td>未定</td><td>未定</td><td>未定</td></tr>
+                  <tr><th>XL</th><td>未定</td><td>未定</td><td>未定</td><td>未定</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-story">
+      <p class="story-kicker">LibeRial × Material</p>
+      <h2>日常に、LibeRialを。</h2>
+      <p>仕事でも、プライベートでも。シンプルだからこそ、スタイルを選ばない。LRロゴをアクセントにした一着です。</p>
+    </section>
+  </main>
+
+  {% include footer.html %}
+
+  <script src="{{ '/product-polo.js' | relative_url }}"></script>
+</body>
+</html>
