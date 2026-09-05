@@ -176,6 +176,17 @@ copyright_years: "2025-2026"
 {% include footer.html %}
 
 <script>
+  /* ホームを開いた時は先頭から表示 */
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.addEventListener('pageshow', function () {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  });
+
 document.addEventListener("DOMContentLoaded", function(){
   const hamburger = document.getElementById("hamburger");
   const nav = document.getElementById("nav");
