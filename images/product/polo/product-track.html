@@ -1,0 +1,159 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LibeRial LR TRACK SETUP。ホワイトとブラックの2カラーで展開するオリジナルトラックセットアップ。">
+  <title>LR TRACK SETUP | LibeRial</title>
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/product-track.css' | relative_url }}">
+</head>
+<body>
+  {% include header.html %}
+
+  <main class="product-page">
+    <section class="product-shell">
+      <div class="product-gallery" aria-label="商品画像ギャラリー">
+        <div class="product-main-media">
+          <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="前の画像">‹</button>
+          <img id="productMainImage"
+               src="{{ '/images/product/track/track-model-white-black.png' | relative_url }}"
+               alt="LibeRial LR TRACK SETUP ホワイト・ブラック着用イメージ">
+          <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="次の画像">›</button>
+          <div class="gallery-counter"><span id="galleryCurrent">1</span> / 7</div>
+        </div>
+
+        <div class="product-thumbs" id="productThumbs">
+          <button class="product-thumb is-active" type="button"
+                  data-image="{{ '/images/product/track/track-model-white-black.png' | relative_url }}"
+                  data-alt="LR TRACK SETUP ホワイト・ブラック着用イメージ">
+            <img src="{{ '/images/product/track/track-model-white-black.png' | relative_url }}" alt="着用イメージ">
+          </button>
+          <button class="product-thumb" type="button"
+                  data-image="{{ '/images/product/track/track-white-jacket.png' | relative_url }}"
+                  data-alt="LR TRACK SETUP ホワイトジャケット 前後">
+            <img src="{{ '/images/product/track/track-white-jacket.png' | relative_url }}" alt="ホワイトジャケット">
+          </button>
+          <button class="product-thumb" type="button"
+                  data-image="{{ '/images/product/track/track-white-pants.png' | relative_url }}"
+                  data-alt="LR TRACK SETUP ホワイトパンツ 前後">
+            <img src="{{ '/images/product/track/track-white-pants.png' | relative_url }}" alt="ホワイトパンツ">
+          </button>
+          <button class="product-thumb" type="button"
+                  data-image="{{ '/images/product/track/track-black-jacket.png' | relative_url }}"
+                  data-alt="LR TRACK SETUP ブラックジャケット 前後">
+            <img src="{{ '/images/product/track/track-black-jacket.png' | relative_url }}" alt="ブラックジャケット">
+          </button>
+          <button class="product-thumb" type="button"
+                  data-image="{{ '/images/product/track/track-black-pants.png' | relative_url }}"
+                  data-alt="LR TRACK SETUP ブラックパンツ 前後">
+            <img src="{{ '/images/product/track/track-black-pants.png' | relative_url }}" alt="ブラックパンツ">
+          </button>
+          <button class="product-thumb" type="button"
+                  data-image="{{ '/images/product/track/track-logo-detail.png' | relative_url }}"
+                  data-alt="LRロゴ刺繍イメージ">
+            <img src="{{ '/images/product/track/track-logo-detail.png' | relative_url }}" alt="ロゴディテール">
+          </button>
+          <button class="product-thumb" type="button"
+                  data-image="{{ '/images/product/track/track-overview.png' | relative_url }}"
+                  data-alt="LR TRACK SETUP 商品全体イメージ">
+            <img src="{{ '/images/product/track/track-overview.png' | relative_url }}" alt="商品全体イメージ">
+          </button>
+        </div>
+      </div>
+
+      <div class="product-info">
+        <p class="product-kicker">LIBERIAL ORIGINAL</p>
+        <h1>LR TRACK SETUP</h1>
+        <p class="product-price">¥16,500 <span>（税込）</span></p>
+
+        <p class="product-lead">
+          日常に、洗練を。<br>
+          LRロゴをアクセントに、シンプルさとスポーティさを両立した
+          LibeRialオリジナルのトラックセットアップ。
+        </p>
+
+        <div class="option-block">
+          <div class="option-head">
+            <span>COLOR</span>
+            <strong id="selectedColorLabel">WHITE</strong>
+          </div>
+          <div class="option-buttons" data-option="color">
+            <button class="option-btn is-selected" type="button" data-value="WHITE">WHITE</button>
+            <button class="option-btn" type="button" data-value="BLACK">BLACK</button>
+          </div>
+        </div>
+
+        <div class="option-block">
+          <div class="option-head">
+            <span>SIZE</span>
+            <strong id="selectedSizeLabel">未選択</strong>
+          </div>
+          <div class="option-buttons size-buttons" data-option="size">
+            <button class="option-btn" type="button" data-value="S">S</button>
+            <button class="option-btn" type="button" data-value="M">M</button>
+            <button class="option-btn" type="button" data-value="L">L</button>
+            <button class="option-btn" type="button" data-value="XL">XL</button>
+          </div>
+        </div>
+
+        <button class="buy-button" id="buyButton" type="button" disabled>
+          <span>サイズを選択してください</span><span>→</span>
+        </button>
+        <p class="buy-note">※ 現在は商品ページ制作中のため、購入ボタンは仮表示です。</p>
+
+        <div class="product-accordion">
+          <details open>
+            <summary>PRODUCT DETAILS</summary>
+            <div class="detail-copy">
+              <p>
+                ホワイトとブラックの2カラー展開。ジャケットとパンツには
+                LibeRialを象徴する青のLRロゴを配置。
+                袖・サイドラインを効かせたミニマルなトラックスタイルです。
+              </p>
+              <dl>
+                <div><dt>商品</dt><dd>ジャケット＋パンツ セットアップ</dd></div>
+                <div><dt>カラー</dt><dd>WHITE / BLACK</dd></div>
+                <div><dt>サイズ</dt><dd>S / M / L / XL</dd></div>
+                <div><dt>ロゴ</dt><dd>LRロゴ（掲載画像は刺繍イメージ）</dd></div>
+              </dl>
+            </div>
+          </details>
+
+          <details>
+            <summary>SIZE GUIDE</summary>
+            <div class="size-table-wrap">
+              <table class="size-table">
+                <thead>
+                  <tr><th>SIZE</th><th>着丈</th><th>身幅</th><th>ウエスト</th><th>股下</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>S</th><td>未定</td><td>未定</td><td>未定</td><td>未定</td></tr>
+                  <tr><th>M</th><td>未定</td><td>未定</td><td>未定</td><td>未定</td></tr>
+                  <tr><th>L</th><td>未定</td><td>未定</td><td>未定</td><td>未定</td></tr>
+                  <tr><th>XL</th><td>未定</td><td>未定</td><td>未定</td><td>未定</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-story">
+      <p class="story-kicker">LibeRial × Material</p>
+      <h2>日常に、洗練を。</h2>
+      <p>
+        オンでもオフでも。シンプルなデザインに青のLRロゴを効かせた、
+        LibeRialらしいセットアップです。
+      </p>
+    </section>
+  </main>
+
+  {% include footer.html %}
+  <script src="{{ '/product-track.js' | relative_url }}"></script>
+</body>
+</html>
