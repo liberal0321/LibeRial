@@ -176,16 +176,44 @@ copyright_years: "2025-2026"
 {% include footer.html %}
 
 <script>
-  /* ホームを開いた時は先頭から表示 */
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+ /* ホームを開いた時は必ず先頭から表示 */
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 
-  window.addEventListener('pageshow', function () {
-    if (!window.location.hash) {
-      window.scrollTo(0, 0);
-    }
+function resetScrollTop() {
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }
+}
+
+/* 最初に即実行 */
+resetScrollTop();
+
+/* HTML読み込み時 */
+document.addEventListener('DOMContentLoaded', function () {
+  resetScrollTop();
+});
+
+/* 画像なども含めて読み込み完了後 */
+window.addEventListener('load', function () {
+  resetScrollTop();
+
+  setTimeout(resetScrollTop, 100);
+  setTimeout(resetScrollTop, 300);
+  setTimeout(resetScrollTop, 700);
+});
+
+/* iPhone Safariの履歴復元対策 */
+window.addEventListener('pageshow', function () {
+  resetScrollTop();
+
+  requestAnimationFrame(function () {
+    resetScrollTop();
   });
+});
 
 document.addEventListener("DOMContentLoaded", function(){
   const hamburger = document.getElementById("hamburger");
